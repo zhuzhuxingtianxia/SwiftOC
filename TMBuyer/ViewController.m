@@ -34,7 +34,7 @@
 }
 
 - (IBAction)changeTabAction:(id)sender {
-    [TCMRoute routeWithTarget:@"SettingViewController" routeStyle:TCMRouteTab params:@{}];
+    [TCMRoute routeWithTarget:@"SettingViewController" routeStyle:TCMRouteTab params:@{@"info":@"传值成功"}];
 }
 
 - (IBAction)checkLogin:(id)sender {

@@ -178,12 +178,23 @@ static TCMRoute *route = nil;
         __block NSInteger index = -1;
         __block UIViewController *vc = nil;
         [tabbar.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([obj isKindOfClass:NSClassFromString(target)]) {
-                index = idx;
-                vc = obj;
-                *stop = YES;
-                return;
+            if ([obj isKindOfClass:[UINavigationController class]]) {
+                UINavigationController *nav = (UINavigationController*)obj;
+                if ([nav.viewControllers.firstObject isKindOfClass:NSClassFromString(target)]) {
+                    index = idx;
+                    vc = nav.viewControllers.firstObject;
+                    *stop = YES;
+                    return;
+                }
+            }else{
+                if ([obj isKindOfClass:NSClassFromString(target)]) {
+                    index = idx;
+                    vc = obj;
+                    *stop = YES;
+                    return;
+                }
             }
+            
         }];
         if (index>=0) {
             tabbar.selectedIndex = index;

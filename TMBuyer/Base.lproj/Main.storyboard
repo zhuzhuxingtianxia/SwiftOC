@@ -26,9 +26,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3T-zC-gNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1110" y="-134"/>
+            <point key="canvasLocation" x="-255" y="25"/>
         </scene>
-        <!--设置-->
+        <!--个人中心-->
+        <scene sceneID="ZLO-oC-vwI">
+            <objects>
+                <navigationController id="O4z-3G-egb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="个人中心" id="unG-Q5-5xb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="90u-tc-M7P">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cRn-E3-hw3" kind="relationship" relationship="rootViewController" id="GvD-lM-ChY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wD7-gA-qta" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-431" y="1176"/>
+        </scene>
+        <!--Setting View Controller-->
         <scene sceneID="F3K-eH-vAe">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="cRn-E3-hw3" customClass="SettingViewController" sceneMemberID="viewController">
@@ -36,36 +53,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qv-g1-xtv">
-                                <rect key="frame" x="142" y="349" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qv-g1-xtv">
+                                <rect key="frame" x="156.5" y="218.5" width="62" height="30"/>
                                 <state key="normal" title="设置界面"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0qv-g1-xtv" firstAttribute="centerX" secondItem="Xnl-q8-8TN" secondAttribute="centerX" id="Rq4-JO-c7a"/>
+                            <constraint firstItem="0qv-g1-xtv" firstAttribute="centerY" secondItem="Xnl-q8-8TN" secondAttribute="centerY" constant="-100" id="sTa-4J-9rg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nFs-od-sqG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="设置" id="fF0-mv-yRL"/>
+                    <navigationItem key="navigationItem" id="Z1x-vd-xym"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMl-bZ-xSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-68" y="1573"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="TpQ-7X-iJ9">
-            <objects>
-                <viewController id="h4s-aX-LMf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="57B-Z9-faM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="0tx-Ws-QAn"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="zBd-ej-yHR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eh5-Lb-f2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-9" y="689"/>
+            <point key="canvasLocation" x="506" y="1175"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9bd-5L-e0G">
@@ -78,12 +82,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="DJJ-ZS-Cqu" kind="relationship" relationship="viewControllers" id="1au-Lu-Dcw"/>
-                        <segue destination="cRn-E3-hw3" kind="relationship" relationship="viewControllers" id="j3K-79-AUF"/>
+                        <segue destination="O4z-3G-egb" kind="relationship" relationship="viewControllers" id="Y4J-nj-XIJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQx-0L-HRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-996" y="838"/>
+            <point key="canvasLocation" x="-1238" y="838"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
