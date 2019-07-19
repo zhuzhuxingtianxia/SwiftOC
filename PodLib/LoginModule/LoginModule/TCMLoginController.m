@@ -70,7 +70,7 @@ NSInteger const TCMAccountSystemPasswordLengthMax = 12;
 #pragma mark -- Action
 - (IBAction)loginAction:(id)sender {
     
-    [TCMRoute routeWithTarget:@"ViewController" routeStyle:TCMRoutePop params:@{@"login":@"成功"}];
+    [TCMRoute routeWithTarget:@"ViewController" routeStyle:TCMRoutePop params:@{@"info":@"成功"}];
     
     [self dismissViewControllerAnimated:YES completion:^{
 
@@ -81,10 +81,13 @@ NSInteger const TCMAccountSystemPasswordLengthMax = 12;
    
 }
 
+#pragma mark -- TCMRouteProtocol
 
 + (nonnull UIViewController<TCMRouteProtocol> *)routeWithParams:(id)params {
-    TCMLoginController *vc = [TCMLoginController new];
-
+    //pod作为静态库时，可以直接[TCMLoginController new]，动态库却不行，还是因为引入了swift文件的问题
+    TCMLoginController *vc = [[TCMLoginController alloc] initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle bundleForClass:[self class]]];
+    vc.title = params[@"title"];
+    
     return vc;
 }
 

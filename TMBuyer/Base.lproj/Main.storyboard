@@ -54,7 +54,6 @@
         <!--Item 1-->
         <scene sceneID="TpQ-7X-iJ9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eh5-Lb-f2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="h4s-aX-LMf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="57B-Z9-faM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -64,6 +63,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="zBd-ej-yHR"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eh5-Lb-f2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-9" y="689"/>
         </scene>
@@ -94,40 +94,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUo-SG-nan">
-                                <rect key="frame" x="141.5" y="318.5" width="92" height="30"/>
+                                <rect key="frame" x="148" y="318.5" width="79" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.099659575190000002" blue="0.22732045949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="点击按钮事件"/>
+                                <state key="normal" title="跳swift传参"/>
                                 <connections>
-                                    <action selector="checkLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vfh-YK-6I8"/>
+                                    <action selector="pushSwiftAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TyG-P8-Oyo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3D-nc-45v">
                                 <rect key="frame" x="161" y="396" width="53" height="30"/>
                                 <state key="normal" title="切换tab"/>
                                 <connections>
-                                    <action selector="changeTabAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kge-yv-nwP"/>
+                                    <action selector="changeTabAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="27g-h5-5Ij"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ia-Xd-LcA">
-                                <rect key="frame" x="155" y="472" width="65" height="30"/>
-                                <state key="normal" title="push界面"/>
+                                <rect key="frame" x="145.5" y="472" width="84" height="30"/>
+                                <state key="normal" title="Present界面"/>
                                 <connections>
-                                    <action selector="pushAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mGH-E8-PLk"/>
+                                    <action selector="checkLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lsu-Nb-tyL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOq-PT-j6o">
+                                <rect key="frame" x="153.5" y="254" width="68" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.099659575190000002" blue="0.22732045949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="跳OC传参"/>
+                                <connections>
+                                    <action selector="pushAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LHy-mT-fsH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="展示返回值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAA-C1-qHe">
+                                <rect key="frame" x="144" y="179" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0Ia-Xd-LcA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7fO-HI-V5Q"/>
                             <constraint firstItem="e3D-nc-45v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CKn-JV-uvm"/>
+                            <constraint firstItem="sUo-SG-nan" firstAttribute="top" secondItem="GOq-PT-j6o" secondAttribute="bottom" constant="34.5" id="HL7-QR-tuK"/>
                             <constraint firstItem="0Ia-Xd-LcA" firstAttribute="top" secondItem="e3D-nc-45v" secondAttribute="bottom" constant="46" id="ZnR-St-K84"/>
                             <constraint firstItem="sUo-SG-nan" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aLb-CJ-0B0"/>
+                            <constraint firstItem="sAA-C1-qHe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="afa-6u-QEt"/>
                             <constraint firstItem="sUo-SG-nan" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bwO-1g-vkH"/>
+                            <constraint firstItem="GOq-PT-j6o" firstAttribute="top" secondItem="sAA-C1-qHe" secondAttribute="bottom" constant="54" id="eZG-lW-iIE"/>
                             <constraint firstItem="e3D-nc-45v" firstAttribute="top" secondItem="sUo-SG-nan" secondAttribute="bottom" constant="47.5" id="sJQ-mI-hqM"/>
+                            <constraint firstItem="GOq-PT-j6o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xXg-2M-4e9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="aXW-Y0-4Iu"/>
+                    <connections>
+                        <outlet property="showLabel" destination="sAA-C1-qHe" id="jxX-23-K7X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

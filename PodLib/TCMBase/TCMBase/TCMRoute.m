@@ -29,7 +29,7 @@ static TCMRoute *route = nil;
 
 + (UIViewController*)routeWithTarget:(nonnull NSString *)target routeStyle:(TCMRouteStyle)routeStyle params:(NSDictionary<NSString *, id>  *)params{
     
-    if (!target || target.length == 0) {
+    if ((!target || target.length == 0)&&routeStyle != TCMRoutePop) {
         NSLog(@"target not nil or emty");
         return nil;
     }
@@ -104,21 +104,37 @@ static TCMRoute *route = nil;
 
 + (UIViewController *)routeTypePopWithTarget:(nonnull NSString *)target  params:(NSDictionary<NSString *, id>  *)params {
     Class aclass = NSClassFromString(target);
-    if (!aclass) {
-        return nil;
-    }
+    
     UIViewController *backVC = nil;
     UIViewController *currentVc = [self currentViewController];
     if (currentVc.navigationController) {
-        for (UIViewController *vc in currentVc.navigationController.childViewControllers) {
-            if ([vc isKindOfClass:[aclass class]]) {
-                backVC = vc;
-                if ([backVC respondsToSelector:@selector(routePopWithParams:)]){
-                    [backVC routePopWithParams:params];
+        if (aclass) {
+            for (UIViewController *vc in currentVc.navigationController.childViewControllers) {
+                if ([vc isKindOfClass:[aclass class]]) {
+                    backVC = vc;
+                    if ([backVC respondsToSelector:@selector(routePopWithParams:)]){
+                        [backVC routePopWithParams:params];
+                    }
+                    [currentVc.navigationController popToViewController:backVC animated:YES];
+                    break;
                 }
-                [currentVc.navigationController popToViewController:backVC animated:YES];
-                break;
             }
+        }else {
+            NSArray *childArray = currentVc.navigationController.viewControllers;
+            if (childArray.count>1) {
+                backVC = currentVc.navigationController.viewControllers[childArray.count-2];
+            }
+            
+            //swift兼容
+            NSString *backVCString = NSStringFromClass([backVC class]);
+            if ([backVCString containsString:@"."]) {
+                [backVC routePopWithParams:params];
+                
+            }else if ([backVC respondsToSelector:@selector(routePopWithParams:)]){
+                
+                [backVC routePopWithParams:params];
+            }
+            [currentVc.navigationController popViewControllerAnimated:YES];
         }
         
         if (!backVC) {
@@ -130,7 +146,7 @@ static TCMRoute *route = nil;
                 if ([tabbarVC.selectedViewController isKindOfClass:[UINavigationController class]]) {
                     backVC = ((UINavigationController*)tabbarVC.selectedViewController).viewControllers.lastObject;
                 }else{
-                   backVC = tabbarVC.selectedViewController;
+                    backVC = tabbarVC.selectedViewController;
                 }
                 
             }
@@ -225,6 +241,13 @@ static TCMRoute *route = nil;
 
 
 @implementation UIViewController (RouteProtocol)
+
++ (nonnull UIViewController<TCMRouteProtocol> *)routeWithParams:(nullable NSDictionary<NSString *, id> *)params{
+    return nil;
+}
+- (void)routePopWithParams:(nullable NSDictionary<NSString *, id> *)params{
+    
+}
 
 @end
 

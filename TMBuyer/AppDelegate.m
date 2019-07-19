@@ -30,7 +30,7 @@
     
     [self registerTalkingData];
     
-    [self QQApiInterface];
+//    [self QQApiInterface];
     return YES;
 }
     

@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "TMBuyer-Swift.h"
 
 @interface SettingViewController ()
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    XXViewController *xx = [XXViewController new];
+    xx.title = @"从OC来到swift";
 }
 
 /*

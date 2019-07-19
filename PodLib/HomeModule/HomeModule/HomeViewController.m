@@ -17,13 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view from its nib.
     
 }
 - (IBAction)jumpModuleData:(id)sender {
-    
-//    SettingController *settingVC = [[SettingController alloc] init];
-//    settingVC.title = @"xcxc";
     
     if (self.presentingViewController) {
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -35,19 +33,19 @@
 }
 
 + (nonnull UIViewController<TCMRouteProtocol> *)routeWithParams:(id)params {
-    HomeViewController *vc = [HomeViewController new];
-
+    HomeViewController *vc = [[HomeViewController alloc] initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle bundleForClass:[self class]]];
+    vc.title = params[@"title"];
     return vc;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
