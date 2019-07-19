@@ -1,0 +1,19 @@
+{
+  "name": "TCMBase",
+  "version": "0.0.1",
+  "summary": "TCMBase基础库.",
+  "description": "TODO: 用于做一些与业务无关的处理，不牵扯其他文件",
+  "homepage": "https://github.com/",
+  "license": "MIT",
+  "authors": {
+    "zhuzijia": "email.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/TCMBase.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "TCMBase/**/*.{h,m,swift,c,cpp}"
+}

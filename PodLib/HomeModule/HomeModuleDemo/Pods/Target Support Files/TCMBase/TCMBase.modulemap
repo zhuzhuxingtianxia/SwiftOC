@@ -1,0 +1,6 @@
+framework module TCMBase {
+  umbrella header "TCMBase-umbrella.h"
+
+  export *
+  module * { export * }
+}

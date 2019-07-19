@@ -1,0 +1,6 @@
+framework module TCMNetworkingKit {
+  umbrella header "TCMNetworkingKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

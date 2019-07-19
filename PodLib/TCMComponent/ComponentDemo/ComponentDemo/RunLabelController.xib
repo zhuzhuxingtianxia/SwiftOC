@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RunLabelController">
+            <connections>
+                <outlet property="view" destination="JTi-V9-qC9" id="oaR-u6-GRW"/>
+                <outlet property="xibLabel" destination="by5-JM-C6E" id="nV3-Nk-4Zt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="JTi-V9-qC9">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡起来非常就和死这样子了..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="by5-JM-C6E" customClass="TCMRunLabel">
+                    <rect key="frame" x="10" y="313.5" width="355" height="40"/>
+                    <color key="backgroundColor" red="0.0039215686269999999" green="0.57647058819999997" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Vza-Le-w52"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.099659575190000002" blue="0.22732045949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fpu-x6-Qib" firstAttribute="trailing" secondItem="by5-JM-C6E" secondAttribute="trailing" constant="10" id="Ahd-Go-42v"/>
+                <constraint firstItem="by5-JM-C6E" firstAttribute="centerY" secondItem="JTi-V9-qC9" secondAttribute="centerY" id="Fkv-wx-abE"/>
+                <constraint firstItem="by5-JM-C6E" firstAttribute="leading" secondItem="fpu-x6-Qib" secondAttribute="leading" constant="10" id="lUc-6f-JQj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fpu-x6-Qib"/>
+            <point key="canvasLocation" x="229.59999999999999" y="-16.641679160419791"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,24 @@
+{
+  "name": "TCMComponent",
+  "version": "0.0.1",
+  "summary": "TCMComponent基础功能库.",
+  "description": "TODO: TCMComponent基础功能库,如：轮播图、tabpage、分享的封装、支付封装等",
+  "homepage": "https://github.com",
+  "license": "MIT",
+  "authors": {
+    "zhuzijia": "873391579@qq.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/TCMComponent.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "TCMComponent/**/*.{h,m}",
+  "dependencies": {
+    "YYKit": [
+      "~> 1.0.9"
+    ]
+  }
+}

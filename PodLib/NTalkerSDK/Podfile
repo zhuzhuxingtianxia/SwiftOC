@@ -1,0 +1,26 @@
+project 'NTalkerDemo.xcodeproj'
+
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+
+target 'NTalkerDemo' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # 报错：(maybe you meant: ___llvm_profile_runtime_user)
+  # 解决：Other Linker Flags中添加-fprofile-instr-generate
+  pod 'NTalkerSDK',:path => './'
+  
+  # Pods for NTalkerDemo
+
+  target 'NTalkerDemoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'NTalkerDemoUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

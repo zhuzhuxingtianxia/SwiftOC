@@ -1,0 +1,25 @@
+PODS:
+  - TCMComponent (0.0.1):
+    - YYKit (~> 1.0.9)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - TCMComponent (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - YYKit
+
+EXTERNAL SOURCES:
+  TCMComponent:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TCMComponent: b9a1b446c9fcb5ee617bd29dbf137bf17526cf7f
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: fdbbb4a15e2fe9382c117c49ae21ab4995e6190e
+
+COCOAPODS: 1.5.2

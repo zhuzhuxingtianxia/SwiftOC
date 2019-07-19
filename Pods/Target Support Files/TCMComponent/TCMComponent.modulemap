@@ -1,0 +1,6 @@
+framework module TCMComponent {
+  umbrella header "TCMComponent-umbrella.h"
+
+  export *
+  module * { export * }
+}

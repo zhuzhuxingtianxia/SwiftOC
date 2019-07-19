@@ -1,0 +1,22 @@
+{
+  "name": "TencentOpenAPI",
+  "version": "3.3.3",
+  "summary": "TencentOpenAPI腾讯开发平台",
+  "description": "TODO: TencentOpenAPI腾讯开发平台SDK,具体使用参考腾讯开发者文档",
+  "homepage": "https://wiki.open.qq.com/index.php?title=iOS_API%E8%B0%83%E7%94%A8%E8%AF%B4%E6%98%8E&oldid=46716",
+  "license": "MIT",
+  "authors": {
+    "zhuzijia": "873391579@qq.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/TencentOpenAPI.git",
+    "tag": "3.3.3"
+  },
+  "vendored_frameworks": "TencentOpenAPI/TencentOpenAPI.framework",
+  "pod_target_xcconfig": {
+    "VALID_ARCHS[sdk=iphonesimulator*]": ""
+  }
+}

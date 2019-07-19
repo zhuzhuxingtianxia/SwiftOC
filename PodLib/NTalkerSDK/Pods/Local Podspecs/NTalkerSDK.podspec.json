@@ -1,0 +1,43 @@
+{
+  "name": "NTalkerSDK",
+  "version": "2.6.5",
+  "summary": "NTalkerSDK小能客服",
+  "description": "DOTO: NTalkerSDK实时在线客服聊天服务系统。\n文档：https://docs.xiaoneng.cn/iossdk/SDK%E5%AF%BC%E5%85%A5%E5%8F%8AXcode%E9%85%8D%E7%BD%AE.html",
+  "homepage": "http://doc3.xiaoneng.cn/ntalker.php",
+  "license": "MIT",
+  "authors": {
+    "zhuzijia": "873391579@qq.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/NTalkerSDK.git",
+    "tag": "2.6.5"
+  },
+  "resources": [
+    "NTalkerSDK/NTalkerColorful.bundle",
+    "NTalkerSDK/NTalkerDefault.bundle",
+    "NTalkerSDK/NTalkerGuest.bundle"
+  ],
+  "vendored_frameworks": [
+    "NTalkerSDK/NTalkerGuestIMKit.framework",
+    "NTalkerSDK/NTalkerIMCore.framework"
+  ],
+  "frameworks": [
+    "AVFoundation",
+    "Contacts",
+    "CoreTelephony",
+    "AddressBook"
+  ],
+  "libraries": [
+    "sqlite3.0",
+    "xml2.2",
+    "stdc++",
+    "c++"
+  ],
+  "static_framework": true,
+  "pod_target_xcconfig": {
+    "VALID_ARCHS[sdk=iphonesimulator*]": ""
+  }
+}

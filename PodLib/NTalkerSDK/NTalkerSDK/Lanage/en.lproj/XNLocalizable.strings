@@ -1,0 +1,196 @@
+//NTalkerChatViewController(主聊窗)
+"chatTitle" = "OnlineService";//聊窗标题
+"inputingTitle" = "In input...";//客服正在输入
+"netWorkStatus" = "Network unavailable,Check network";//无网提示
+"recordBtnTitleNomal" = "Hold to talk";//录音按钮标题 默认状态下
+"recordBtnTitleHlight" = "Release to send";//录音按钮标题 高亮状态下
+"sure" = "Sure";//"Determine";
+"confirm" = "confirm";
+"deviceUnused" = "Equipment is not available";
+"tipTitle" = "Prompt";//提示标题
+"endChatTip" = "Are you sure to end the current session?";//结束会话提示语
+"openCameraAuthority" = "You have not obtained camera permissions, please go to the Settings page to open related permissions.";//相机权限提示
+"openPhotoLibAuthority." = "You have not obtained Photo album permissions, please go to the Settings page to open related permissions";//相册权限提示
+"openMicrophoneAuthority" = "You have not obtained the microphone permission, please go to the setting page to open the relevant permission.";//麦克风权限提示
+
+"ArticlePointsToSend" = "The content you enter is too long. It will be sent to you in sections up to 400 words each";
+"overWords" = "The content you entered has exceeded 1000 words. Please delete it and send it";
+
+"cantRecord" = "Cannot record";//无法录音提示
+"clickStartToIdentify" = "Click start to identify";
+"didNotSayAnything" = "I didn't seem to say anything";
+"identifyFailureTryAgain" = "Identify the failure and click try again";
+"identification" = "Identification of...";
+"pleaseSpeak" = "I'm listening to your voice. Please speak...";
+
+//小视频相关
+"noPermissions" = "no Permissions";
+"openPermissions" = "You have not obtained the camera and microphone permissions, please go to the Settings page to open related permissions.";
+"ok" = "ok";
+"pressToRecord" = "press to Record";
+"cancel" = "cancel";
+
+"muchMoreTextTip" = "Send the content is too long";
+"noTextTip" = "Send message can not be empty";
+//客服非在线提醒
+"lostNetTip" = "your network is weak,please check and back come in";
+"customerServiceLeaved" = "Customer service is not online, please leave a message";
+"onlineUpFront" = "Customer service is busy, you are ranked in";
+"onlineUpBehind" = "Please wait or leave a message";
+"KFLeavedNoLeaveMessage" = "Customer service is not online";
+"KFBusyNoLeaveMsgFront" = "Customer service is busy, you are ranked in";
+"KFBusyNoLeaveMsgBehind" = "Please wait";
+"switchRobotErrorTip" = "Manual customer service is not available, you can continue to chat with the robot or";
+//强输时提醒
+"customerServiceLeavedTip" = "Customer service is not online, please leave a message!";
+"customerServiceBusyTip" = "Customer service busy, please wait!";
+"requestingTip" = "Requesting customer service...";
+"netWorkStatusTip" = "Please check your network settings";
+//访客排队中，提醒
+"isGiveUp" = "Will you  give up the queue?";
+"yes" = "YES";
+"no" = "NO";
+//转人工
+"TurnManual" = "Turn into Manual";
+//功能键盘
+"pictureLabel" = "Photos";
+"cameraLabel" = "Camera";
+"photoLabel" = "PhotoAlbum";
+"evalueLabel" = "Evaluate";
+"videoLabel" = "Video";
+"orderLabel" = "Order";
+"haveEvaluedLabel" = "Evaluated";
+"settingLabel" = "Setting";
+"videoCallLabel" = "VideoCall";
+"customSkin" = "CustomSkin";
+"inputGuide" = "InputGuide";
+"showKefuName" = "DisplayCustomerServiceName";
+"photoSelected" = "Has chosen ";//照片已选择
+"photoSelectedPages" = "";//照片已选择的单位
+"faceLabel" = "Face";
+"voiceMsgLabel" = "Voice Message";
+//表情
+"send" = "send";
+"historyTip" = "Above is the historical news";
+"clickLeveMsg" = "message";
+//录音图片上提示
+"talkerTooShort" = "Message too short";
+"recordEnding" = "Release to cancel";
+"talkerEndToVolume" = "Slide up to cancel";
+
+//NTalkerLeaveMsgViewController(留言)
+"leaveMessageTitle" = "Message";
+//placeHold
+"leaveMsg" = "Message...";
+"leaveMsgName" = "Full name";
+"leaveMsgPhoneNum" = "Phone number";
+"leaveMsgEmail" = "Mailbox";
+"submit" = "Submit";
+"Required" = "Required";
+"Notice" = "Notice";
+//机器人
+"systypeClickText" = "Message";//点击留言
+//提示语
+"limitMsgTipText" = "Message content can not be more than 400 characters";
+"limitNameTipText" = "Name content is too long";
+"submitLeaveFail" = "Message submission failed";
+"submitLeaveSuccess" = "Message submitted successfully";
+"unsubmitByNet" = "No network, the message can not be submitted for the time being";
+"noleaveMsgTip" = "Please fill in the message, thank you!";
+"noLeaveNameTip" = "Please fill in your name, thank you!";
+"noContactInfoTip" = "Please fill in the phone number or email address!";
+"phoneNumErrorTip" = "Please fill in the correct phone number, thank you!";
+"EmailErrorTip" = "Please fill in the correct mailbox, thank you!";
+"phoneOrEmailErrorTip" = "Please fill in valid email or phone number";
+"sendMsgTipText" = "The number of words you enter has exceeded the 400 word limit！";
+"unknownMsg" = "Unknown type message.";
+"unsupportiveBehaviorTip" = "Unsupportive behavior";
+"webErrorTip" = "The address is empty";
+"LeaveErrorTip" = "Message service is being upgraded";
+
+//评价
+"evalue0" = "Very satisfied";
+"evalue1" = "Satisfied";
+"evalue2" = "Commonly";
+"evalue3" = "Dissatisfied";
+"evalue4" = "Very not satisfied";
+"evalueTitle" = "Thank you , please make an assessment.";
+"solveStatus" = "Problem solving status";
+"solve0" = "Solved";
+"solve1" = "Solveing";
+"solve2" = "Unsolved";
+"evalueAdvise" = "Suggestions and feedback";
+"cancelTitle" = "Cancel";
+"advisePlaceHold" = "The idea of the moment";
+"limitEvalueTip" = "Evaluation content can not be more than 200 characters";
+"noNetWorkSubmitEvalueTip" = " No network, the evaluation can not be submitted for the time being";
+"submitEvalueResult" = "Evaluation submitted to success!";
+"submitEvaluation" = "Submit evaluation";//提交评价
+
+//cell
+"copyLink" = "Copy link";
+//本地未读消息
+"imageMsg" = "image message";
+"voiceMsg" = "voice message";
+"videoMsg" = "video message";
+"fuMadiaMsg" = "fumadia message";
+//保存照片到相册
+"successSaveToLibrary" = "Save to photoLabaray success";
+"savePictureFailed" = "Save to photos Labaray failed,please check the photos Labaray setting";
+
+//视频录制
+"close" = "Close";//关闭
+"videoRemake" = "Remake";//重拍
+"videoButtonTitle" = "Long press";//长按录制
+"videoRecordTip" = "At least that's it!";//录制提示语
+
+//自定义皮肤
+"settingTitle" = "Setting";//设置
+"chatBackground" = "Chat background";//聊天背景
+"classicVersion" = "Default";//经典版
+"colorfulVersion" = "StarrySky";//炫彩版
+"customisedVersion" = "Customised";//定制版
+
+"endChat" = "EndChat";
+"block" = "Block";
+"inConecting" = "Conecting";
+"typeInTitle" = "type in here...";
+"sendGood" = "Send";
+"resend" = "Resend";//重新发送
+"historyLoading" = "Loading...";//历史记录正在加载中
+"historyloadingTip" = "No more news";//没有更多聊天内容
+"pullTip" = "pull down to see more history messages";
+"newMessageTip" = "The following is the latest news";
+"reloading" = "Reload";//重新加载
+"serverErrorTip" = "Ah! Server error";//服务器出错提示
+"serverLoadingTip" = "Building a comfortable chat environment...";//聊天环境加载中提示
+"systemVersionLowTip" = "The mobile system version is too low to support this message";//手机系统版本过低，不支持展示此消息
+
+"messagePhoneActionSheetTitle" = "May be a phone number, you can do the following";
+"messagePhoneCall" = "call";
+"messagePhoneCopy" = "copy";
+"messagePhoneCancel" = "cancel";
+"messagePhoneCopySuccess" = "copy success";
+
+//超媒体相关
+"expiredHypermediaTip" = "【Here is an expired [hypermedia message]】";
+
+//视频通话相关
+"microphone" = "Microphone";
+"camera" = "Camera";
+"light" = "Light";
+"FlipCamera" = "FlipCamera";
+"EndOfTheConversation" = "End of the conversation";
+"FrontCameraDoesNotSupportFlashOn" = "Front Camera Does Not Support Flash On";
+"KFExternalName" = "KF External Name";
+"WaitForAnInvitation" = "Wait For An Invitation...";
+"InvitationHasBeenAccepted" = "Invitation Has Been Accepted...";
+"YouAreInvitedToJoinVideo" = "You Are Invited To Join Video...";
+"SureToContinueVideoCall" = "In the context of mobile network, the quality of video calls will be affected and mobile traffic charges will be generated. Are you sure to continue？";
+"DidNotAnswer" = "Did Not Answer";
+"TheOtherPartyHasRefused" = "The Other Party Has Refused";
+"HasBeenCancelled" = "Has Been Cancelled";
+"HasBeenPickedUp" = "Has Been Picked Up";
+"HasBeenRefused" = "Has Been Refused";
+"CallsInterrupted" = "Affected by third-party applications, calls are interrupted";
+"CurrentNetworkNotGood" = "The current network status is not good, the call may be affected";

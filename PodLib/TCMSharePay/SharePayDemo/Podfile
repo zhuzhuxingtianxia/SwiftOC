@@ -1,0 +1,28 @@
+project 'SharePayDemo.xcodeproj'
+
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+
+target 'SharePayDemo' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+  
+  pod 'TCMSharePay', :path => '../'
+  pod 'TencentOpenAPI', :path => '../../TencentOpenAPI'
+  pod 'WechatOpenSDK', '~> 1.8.4'
+  pod 'AlipaySDK-iOS', '~> 15.5.9'
+  pod 'WeexSDK', '~> 0.24.0'
+
+  # Pods for SharePayDemo
+
+  target 'SharePayDemoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SharePayDemoUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

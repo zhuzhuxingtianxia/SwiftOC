@@ -1,0 +1,25 @@
+{
+  "name": "TCMSharePay",
+  "version": "0.0.1",
+  "summary": "TCMSharePay分享支付组件.",
+  "description": "TODO:TCMSharePay社会化分享支付组件，有些分享支付共用相同SDK，所以把支付分享放在一起",
+  "homepage": "https://github.com",
+  "license": "MIT",
+  "authors": {
+    "zhuzijia": "873391579@qq.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/TCMSharePay.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "TCMSharePay/**/*.{h,m}",
+  "resources": "TCMSharePay/**/*.png",
+  "dependencies": {
+    "AlipaySDK-iOS": [
+      "~> 15.5.9"
+    ]
+  }
+}

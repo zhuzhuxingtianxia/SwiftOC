@@ -1,0 +1,28 @@
+{
+  "name": "HomeModule",
+  "version": "0.0.1",
+  "summary": "HomeModule首页模块.",
+  "description": "TODO: HomeModule用于展示首页的一些内容，及附属页面",
+  "homepage": "https://home.firefoxchina.cn/",
+  "license": "MIT",
+  "authors": {
+    "zhuzijia": "873391579@qq.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/HomeModule.git",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "HomeModule",
+    "HomeModule/**/*.{h,m,swift}"
+  ],
+  "resources": "HomeModule/**/*",
+  "dependencies": {
+    "TCMBase": [
+
+    ]
+  }
+}

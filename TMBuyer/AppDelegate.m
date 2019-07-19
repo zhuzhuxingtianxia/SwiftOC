@@ -1,0 +1,101 @@
+//
+//  AppDelegate.m
+//  TMBuyer
+//
+//  Created by ZZJ on 2019/7/9.
+//  Copyright © 2019 Jion. All rights reserved.
+//
+
+#import "AppDelegate.h"
+/** 小能客服DSK */
+#import <NTalkerGuestIMKit/NTalkerGuestIMKit.h>
+#import <NTalkerIMCore/NtalkerErrorCode.h>
+/* 统计分析 */
+#import <TalkingData/TalkingData.h>
+/* 腾讯api */
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+
+@interface AppDelegate ()
+
+@end
+
+@implementation AppDelegate
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    
+    [self registerXN];
+    
+    [self registerTalkingData];
+    
+    [self QQApiInterface];
+    return YES;
+}
+    
+- (void)QQApiInterface {
+   id ob = [[TencentOAuth alloc] initWithAppId:@"" andDelegate:nil];
+    QQApiTextObject *obj = [QQApiTextObject objectWithText:@"title"];
+    SendMessageToQQReq *req = [SendMessageToQQReq reqWithContent:obj];
+    [QQApiInterface SendReqToQZone:req];
+    
+}
+#pragma mark - 注册TalkingData数据统计
+    /*
+     *只统计正式环境数据，并区分抢先版和appstore版本
+     */
+- (void)registerTalkingData{
+ [TalkingData sessionStarted:@"DAEA5BF7916E48209A97F51E15CC132F" withChannelId:@""];
+}
+#pragma mark - 注册小能客服
+    /**小能客服
+     SDK初始化
+     siteid: 企业ID，即企业的唯一标识。【必填】
+     SDKKey: 企业通行密钥。【必填】
+     */
+- (void)registerXN{
+    [Ntalker ntalker_initSDKWithSiteid:@"企业ID" completion:^(BOOL finished, NSUInteger code) {
+        NSLog(@"finished=%d,code=%ld",finished,code);
+    }];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginXN) name:@"ntalker_loginWithUserId" object:nil];
+}
+    
+- (void)loginXN{
+    
+    NSInteger Code = [Ntalker ntalker_loginWithUserId: @"userID" andUserName: @"username"];
+    if (Code == NTALKER_LOGIN_SUCCESS) {
+        NSLog(@"登陆成功");
+    }
+    
+}
+
+
+- (void)applicationWillResignActive:(UIApplication *)application {
+    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+}
+
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+}
+
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+}
+
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+@end

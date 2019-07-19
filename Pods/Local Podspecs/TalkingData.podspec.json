@@ -1,0 +1,26 @@
+{
+  "name": "TalkingData",
+  "version": "4.0.34",
+  "summary": "TalkingData应用统计分析工具",
+  "description": "TalkingData提供综合数据解决方案，帮助用户快速整合数据，并解决商圈经营，精准营销等场景问题。",
+  "homepage": "http://doc.talkingdata.com/posts/20",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zhuzijia": "873391579@qq.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/TalkingData.git",
+    "tag": "4.0.34"
+  },
+  "source_files": "TalkingData/**/*.{h,m}",
+  "vendored_libraries": "TalkingData/libTalkingData.a",
+  "pod_target_xcconfig": {
+    "VALID_ARCHS[sdk=iphonesimulator*]": ""
+  }
+}

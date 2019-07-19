@@ -1,0 +1,37 @@
+PODS:
+  - AlipaySDK-iOS (15.5.9)
+  - TCMSharePay (0.0.1):
+    - AlipaySDK-iOS (~> 15.5.9)
+  - TencentOpenAPI (3.3.3)
+  - WechatOpenSDK (1.8.4)
+  - WeexSDK (0.24.0)
+
+DEPENDENCIES:
+  - AlipaySDK-iOS (~> 15.5.9)
+  - TCMSharePay (from `../`)
+  - TencentOpenAPI (from `../../TencentOpenAPI`)
+  - WechatOpenSDK (~> 1.8.4)
+  - WeexSDK (~> 0.24.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AlipaySDK-iOS
+    - WechatOpenSDK
+    - WeexSDK
+
+EXTERNAL SOURCES:
+  TCMSharePay:
+    :path: "../"
+  TencentOpenAPI:
+    :path: "../../TencentOpenAPI"
+
+SPEC CHECKSUMS:
+  AlipaySDK-iOS: 1c5283b30977a24acecc0114662697f7dc78f618
+  TCMSharePay: f06b33d60a175fb5e1dde64d73a70e5cf95af552
+  TencentOpenAPI: d97d01ba6fb04eee7b446487e51c53937f435975
+  WechatOpenSDK: 9b721089507c895d05f997408c30bb6e6f5f9b60
+  WeexSDK: 5bd35be9c035c67c84d1ba15712360bb0d0ba6b5
+
+PODFILE CHECKSUM: 38d61460d17f71674b6750625a66176117a6ff20
+
+COCOAPODS: 1.5.2

@@ -1,0 +1,738 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24846902E69B51331F06E59699EE8049 /* NTalkerSDK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 17ED97706D56BAD83A68C6F067AD819D /* Build configuration list for PBXAggregateTarget "NTalkerSDK" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = NTalkerSDK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		5544379DE45EA043B865FF131AE75D83 /* Pods-NTalkerDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585D4C0BF8901DE28A37F3BBDFBAE9 /* Pods-NTalkerDemoTests-dummy.m */; };
+		6DC9AA552A1032E54E9E09D3A726C687 /* Pods-NTalkerDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F04F2764B6D3863EDD284556E1D68661 /* Pods-NTalkerDemo-dummy.m */; };
+		DC19B4227DDAF87E3867544DEEA117AD /* Pods-NTalkerDemoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 570EE50F7B9D244395DD54040664FD57 /* Pods-NTalkerDemoUITests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF53295500F97E5D5F05DA5DB2D8F846 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67C9674935387051336861ED46888BA0;
+			remoteInfo = "Pods-NTalkerDemo";
+		};
+		C5CF09D165A72E56459D742805DDF432 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67C9674935387051336861ED46888BA0;
+			remoteInfo = "Pods-NTalkerDemo";
+		};
+		DF71236556CDC746ACA014605C7E1CDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24846902E69B51331F06E59699EE8049;
+			remoteInfo = NTalkerSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0CF93B5AC477BAD9B2E91077334410D3 /* Pods-NTalkerDemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NTalkerDemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0E33C6EDFC92475BC83A8FA4BB694143 /* Pods-NTalkerDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NTalkerDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		36C7F6C241522B3D041EB48B1FE7A561 /* Pods-NTalkerDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NTalkerDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		4A15FC70CD777CC961C11B3C530206AC /* NTalkerDefault.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = NTalkerDefault.bundle; path = NTalkerSDK/NTalkerDefault.bundle; sourceTree = "<group>"; };
+		570EE50F7B9D244395DD54040664FD57 /* Pods-NTalkerDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NTalkerDemoUITests-dummy.m"; sourceTree = "<group>"; };
+		6B360963AB840CE45A3499BEE18A1BF3 /* Pods-NTalkerDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NTalkerDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		6DF8DAF1011699DBE0AA16B51422B5FD /* Pods-NTalkerDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NTalkerDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		80331A07D13C4721A70855A65DBD47F6 /* NTalkerIMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NTalkerIMCore.framework; path = NTalkerSDK/NTalkerIMCore.framework; sourceTree = "<group>"; };
+		994EA875114F4CC80BC29525D27922CC /* Pods-NTalkerDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NTalkerDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9D3A0F56CB9C1DA8086CF8983EEF057F /* Pods-NTalkerDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NTalkerDemo-resources.sh"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2E437B16701DCBFC43DD1522037665B /* Pods-NTalkerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NTalkerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		A6585D4C0BF8901DE28A37F3BBDFBAE9 /* Pods-NTalkerDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NTalkerDemoTests-dummy.m"; sourceTree = "<group>"; };
+		AA48460EE1DB604D06CFBFFC628C7B4C /* libPods-NTalkerDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-NTalkerDemoTests.a"; path = "libPods-NTalkerDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB96F23BA1C2DB8CA676A10BA6EE04AB /* Pods-NTalkerDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NTalkerDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B1301873CCC92340AD50F2A609E7D3C4 /* NTalkerSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = NTalkerSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B7035B238B58CE751967529168278A06 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		D467A7826403F6A719624D8651F73A25 /* NTalkerGuestIMKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NTalkerGuestIMKit.framework; path = NTalkerSDK/NTalkerGuestIMKit.framework; sourceTree = "<group>"; };
+		D4FE7BDE5DC9E86F7A75E79736EE96AE /* Pods-NTalkerDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NTalkerDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D54258626FD93638A214EBC5B0F0BBEF /* NTalkerColorful.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = NTalkerColorful.bundle; path = NTalkerSDK/NTalkerColorful.bundle; sourceTree = "<group>"; };
+		D911591F83F5713F879FB70DD11E9945 /* Pods-NTalkerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NTalkerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DDD53920973A64153069F680F854D2F8 /* NTalkerSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NTalkerSDK.xcconfig; sourceTree = "<group>"; };
+		DF1D6445FE3CD21566325CB24B5837B9 /* Pods-NTalkerDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NTalkerDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8818E4A17A9A18D749D8090EE3C187F /* Pods-NTalkerDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NTalkerDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F04F2764B6D3863EDD284556E1D68661 /* Pods-NTalkerDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NTalkerDemo-dummy.m"; sourceTree = "<group>"; };
+		F906B22C07DC6D7DB21132C3E6159507 /* libPods-NTalkerDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-NTalkerDemoUITests.a"; path = "libPods-NTalkerDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F94137E5098B29023EC9868DC2935EC0 /* NTalkerGuest.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = NTalkerGuest.bundle; path = NTalkerSDK/NTalkerGuest.bundle; sourceTree = "<group>"; };
+		FAF3E1C820907DBFDFDF4718177473BE /* libPods-NTalkerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-NTalkerDemo.a"; path = "libPods-NTalkerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E07C235CC19CB8EB29C34493CF9C3B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55E2346A63457E373BFBBEFC7A25B68E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		974E52631B1EF8F6A310B1B9E18C4D62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E866A33026CCB402F3990CB31FD4715 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D54258626FD93638A214EBC5B0F0BBEF /* NTalkerColorful.bundle */,
+				4A15FC70CD777CC961C11B3C530206AC /* NTalkerDefault.bundle */,
+				F94137E5098B29023EC9868DC2935EC0 /* NTalkerGuest.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1DE4542A9A37920E2D90B2E700A7B465 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6AFE6E79E1BCD729B6517C2818AFA54F /* Pods-NTalkerDemo */,
+				8022EC8BC551C3ABF816B1DFFCBC072A /* Pods-NTalkerDemoTests */,
+				A18F298E74028C888E7995DD47242781 /* Pods-NTalkerDemoUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3B3BD1678DF0960913FCB44B330BB617 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B7035B238B58CE751967529168278A06 /* LICENSE */,
+				B1301873CCC92340AD50F2A609E7D3C4 /* NTalkerSDK.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		4ADBFFFB47AA99B44535C282B901C5DB /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4ECA47EBD77F9D087690A84560069296 /* NTalkerSDK */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		4ECA47EBD77F9D087690A84560069296 /* NTalkerSDK */ = {
+			isa = PBXGroup;
+			children = (
+				FB54A67E29BD3248469CC8A9A45AE91F /* Frameworks */,
+				3B3BD1678DF0960913FCB44B330BB617 /* Pod */,
+				0E866A33026CCB402F3990CB31FD4715 /* Resources */,
+				A67A7FCF6DA6BA25BAFF321014537509 /* Support Files */,
+			);
+			name = NTalkerSDK;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		6AFE6E79E1BCD729B6517C2818AFA54F /* Pods-NTalkerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D4FE7BDE5DC9E86F7A75E79736EE96AE /* Pods-NTalkerDemo-acknowledgements.markdown */,
+				36C7F6C241522B3D041EB48B1FE7A561 /* Pods-NTalkerDemo-acknowledgements.plist */,
+				F04F2764B6D3863EDD284556E1D68661 /* Pods-NTalkerDemo-dummy.m */,
+				9D3A0F56CB9C1DA8086CF8983EEF057F /* Pods-NTalkerDemo-resources.sh */,
+				D911591F83F5713F879FB70DD11E9945 /* Pods-NTalkerDemo.debug.xcconfig */,
+				A2E437B16701DCBFC43DD1522037665B /* Pods-NTalkerDemo.release.xcconfig */,
+			);
+			name = "Pods-NTalkerDemo";
+			path = "Target Support Files/Pods-NTalkerDemo";
+			sourceTree = "<group>";
+		};
+		8022EC8BC551C3ABF816B1DFFCBC072A /* Pods-NTalkerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8818E4A17A9A18D749D8090EE3C187F /* Pods-NTalkerDemoTests-acknowledgements.markdown */,
+				AB96F23BA1C2DB8CA676A10BA6EE04AB /* Pods-NTalkerDemoTests-acknowledgements.plist */,
+				A6585D4C0BF8901DE28A37F3BBDFBAE9 /* Pods-NTalkerDemoTests-dummy.m */,
+				DF1D6445FE3CD21566325CB24B5837B9 /* Pods-NTalkerDemoTests.debug.xcconfig */,
+				6B360963AB840CE45A3499BEE18A1BF3 /* Pods-NTalkerDemoTests.release.xcconfig */,
+			);
+			name = "Pods-NTalkerDemoTests";
+			path = "Target Support Files/Pods-NTalkerDemoTests";
+			sourceTree = "<group>";
+		};
+		81C6E166224D8D83CDA5ED3E6FD645A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3E1C820907DBFDFDF4718177473BE /* libPods-NTalkerDemo.a */,
+				AA48460EE1DB604D06CFBFFC628C7B4C /* libPods-NTalkerDemoTests.a */,
+				F906B22C07DC6D7DB21132C3E6159507 /* libPods-NTalkerDemoUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A18F298E74028C888E7995DD47242781 /* Pods-NTalkerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0CF93B5AC477BAD9B2E91077334410D3 /* Pods-NTalkerDemoUITests-acknowledgements.markdown */,
+				0E33C6EDFC92475BC83A8FA4BB694143 /* Pods-NTalkerDemoUITests-acknowledgements.plist */,
+				570EE50F7B9D244395DD54040664FD57 /* Pods-NTalkerDemoUITests-dummy.m */,
+				6DF8DAF1011699DBE0AA16B51422B5FD /* Pods-NTalkerDemoUITests.debug.xcconfig */,
+				994EA875114F4CC80BC29525D27922CC /* Pods-NTalkerDemoUITests.release.xcconfig */,
+			);
+			name = "Pods-NTalkerDemoUITests";
+			path = "Target Support Files/Pods-NTalkerDemoUITests";
+			sourceTree = "<group>";
+		};
+		A67A7FCF6DA6BA25BAFF321014537509 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDD53920973A64153069F680F854D2F8 /* NTalkerSDK.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/NTalkerSDK";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				4ADBFFFB47AA99B44535C282B901C5DB /* Development Pods */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				81C6E166224D8D83CDA5ED3E6FD645A9 /* Products */,
+				1DE4542A9A37920E2D90B2E700A7B465 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB54A67E29BD3248469CC8A9A45AE91F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D467A7826403F6A719624D8651F73A25 /* NTalkerGuestIMKit.framework */,
+				80331A07D13C4721A70855A65DBD47F6 /* NTalkerIMCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5336BCE529B8FDC444CAB86E56EC3E66 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95FEA911A943C99854ECA4B06DED8DE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0CCBC4A1F0A1EA88F2360A5380639EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		67C9674935387051336861ED46888BA0 /* Pods-NTalkerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB167B7977ECC1F1B353A1959A71279E /* Build configuration list for PBXNativeTarget "Pods-NTalkerDemo" */;
+			buildPhases = (
+				B0CCBC4A1F0A1EA88F2360A5380639EA /* Headers */,
+				787503701AE205D56F9D807CD6C961A6 /* Sources */,
+				55E2346A63457E373BFBBEFC7A25B68E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				008B9B1A45896889768C19D1AC2A66EA /* PBXTargetDependency */,
+			);
+			name = "Pods-NTalkerDemo";
+			productName = "Pods-NTalkerDemo";
+			productReference = FAF3E1C820907DBFDFDF4718177473BE /* libPods-NTalkerDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E29307242040F2723546132442FFC71F /* Pods-NTalkerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6B729BA6594346A2B5B7CD50BB7D2E7 /* Build configuration list for PBXNativeTarget "Pods-NTalkerDemoTests" */;
+			buildPhases = (
+				5336BCE529B8FDC444CAB86E56EC3E66 /* Headers */,
+				616FD21D8C1F55D3660B9857AE013049 /* Sources */,
+				974E52631B1EF8F6A310B1B9E18C4D62 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CC28503A6ABB0C881A7E713DD39B995 /* PBXTargetDependency */,
+			);
+			name = "Pods-NTalkerDemoTests";
+			productName = "Pods-NTalkerDemoTests";
+			productReference = AA48460EE1DB604D06CFBFFC628C7B4C /* libPods-NTalkerDemoTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F20BF2EC5786AE80AE8A8CBD51E09BF9 /* Pods-NTalkerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8C0135229721EDADF28A4C4566AD500 /* Build configuration list for PBXNativeTarget "Pods-NTalkerDemoUITests" */;
+			buildPhases = (
+				95FEA911A943C99854ECA4B06DED8DE4 /* Headers */,
+				F0E68AD8D4B5884AF4D69957EF128236 /* Sources */,
+				0E07C235CC19CB8EB29C34493CF9C3B1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C69753276A7CCE040DC9AA43AE17C717 /* PBXTargetDependency */,
+			);
+			name = "Pods-NTalkerDemoUITests";
+			productName = "Pods-NTalkerDemoUITests";
+			productReference = F906B22C07DC6D7DB21132C3E6159507 /* libPods-NTalkerDemoUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 81C6E166224D8D83CDA5ED3E6FD645A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24846902E69B51331F06E59699EE8049 /* NTalkerSDK */,
+				67C9674935387051336861ED46888BA0 /* Pods-NTalkerDemo */,
+				E29307242040F2723546132442FFC71F /* Pods-NTalkerDemoTests */,
+				F20BF2EC5786AE80AE8A8CBD51E09BF9 /* Pods-NTalkerDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		616FD21D8C1F55D3660B9857AE013049 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5544379DE45EA043B865FF131AE75D83 /* Pods-NTalkerDemoTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787503701AE205D56F9D807CD6C961A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DC9AA552A1032E54E9E09D3A726C687 /* Pods-NTalkerDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0E68AD8D4B5884AF4D69957EF128236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC19B4227DDAF87E3867544DEEA117AD /* Pods-NTalkerDemoUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		008B9B1A45896889768C19D1AC2A66EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NTalkerSDK;
+			target = 24846902E69B51331F06E59699EE8049 /* NTalkerSDK */;
+			targetProxy = DF71236556CDC746ACA014605C7E1CDC /* PBXContainerItemProxy */;
+		};
+		1CC28503A6ABB0C881A7E713DD39B995 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-NTalkerDemo";
+			target = 67C9674935387051336861ED46888BA0 /* Pods-NTalkerDemo */;
+			targetProxy = C5CF09D165A72E56459D742805DDF432 /* PBXContainerItemProxy */;
+		};
+		C69753276A7CCE040DC9AA43AE17C717 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-NTalkerDemo";
+			target = 67C9674935387051336861ED46888BA0 /* Pods-NTalkerDemo */;
+			targetProxy = BF53295500F97E5D5F05DA5DB2D8F846 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4773B57B45249019EAEA81E5282C1BCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2E437B16701DCBFC43DD1522037665B /* Pods-NTalkerDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49B6798FB7AEA097DE1CE5E41E2EB1A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D911591F83F5713F879FB70DD11E9945 /* Pods-NTalkerDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66216318831CE7753BFC8CC4735ABA18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDD53920973A64153069F680F854D2F8 /* NTalkerSDK.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		8FF576D883FBCAD703AA776CF218B71D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DF8DAF1011699DBE0AA16B51422B5FD /* Pods-NTalkerDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		916E0404255105F480DC4950B7625F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9D3D4CF39354EE92820B202C243DD2FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDD53920973A64153069F680F854D2F8 /* NTalkerSDK.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B578070EFB800039B1511344BB3FBE27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 994EA875114F4CC80BC29525D27922CC /* Pods-NTalkerDemoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C16051ACFA4BC2ACFB22E300EA88731D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B360963AB840CE45A3499BEE18A1BF3 /* Pods-NTalkerDemoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E78843DA73920E0686F437D28EDAED5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF1D6445FE3CD21566325CB24B5837B9 /* Pods-NTalkerDemoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17ED97706D56BAD83A68C6F067AD819D /* Build configuration list for PBXAggregateTarget "NTalkerSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D3D4CF39354EE92820B202C243DD2FD /* Debug */,
+				66216318831CE7753BFC8CC4735ABA18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				916E0404255105F480DC4950B7625F7A /* Debug */,
+				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8C0135229721EDADF28A4C4566AD500 /* Build configuration list for PBXNativeTarget "Pods-NTalkerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FF576D883FBCAD703AA776CF218B71D /* Debug */,
+				B578070EFB800039B1511344BB3FBE27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB167B7977ECC1F1B353A1959A71279E /* Build configuration list for PBXNativeTarget "Pods-NTalkerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B6798FB7AEA097DE1CE5E41E2EB1A4 /* Debug */,
+				4773B57B45249019EAEA81E5282C1BCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6B729BA6594346A2B5B7CD50BB7D2E7 /* Build configuration list for PBXNativeTarget "Pods-NTalkerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E78843DA73920E0686F437D28EDAED5A /* Debug */,
+				C16051ACFA4BC2ACFB22E300EA88731D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

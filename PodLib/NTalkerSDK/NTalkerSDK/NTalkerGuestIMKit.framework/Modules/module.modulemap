@@ -1,0 +1,6 @@
+framework module NTalkerGuestIMKit {
+  umbrella header "NTalkerGuestIMKit.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,1 @@
+../../../../../TCMSharePay/SocialShare/SocialShareMessage+WeChat.h

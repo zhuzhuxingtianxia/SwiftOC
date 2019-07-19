@@ -1,0 +1,6 @@
+framework module NTalkerIMCore {
+  umbrella header "NTalkerIMCore.h"
+
+  export *
+  module * { export * }
+}

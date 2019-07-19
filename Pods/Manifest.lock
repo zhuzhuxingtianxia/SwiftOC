@@ -1,0 +1,85 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - HomeModule (0.0.1):
+    - TCMBase
+  - LoginModule (0.0.1):
+    - TCMBase
+  - Masonry (1.1.0)
+  - NTalkerSDK (2.6.5)
+  - TalkingData (4.0.34)
+  - TCMBase (0.0.1)
+  - TCMComponent (0.0.1):
+    - YYKit (~> 1.0.9)
+  - TCMNetworkingKit (1.0.0):
+    - AFNetworking (~> 3.2.1)
+  - TencentOpenAPI (3.3.3)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - HomeModule (from `./PodLib/HomeModule`)
+  - LoginModule (from `./PodLib/LoginModule`)
+  - Masonry (~> 1.1.0)
+  - NTalkerSDK (from `./PodLib/NTalkerSDK`)
+  - TalkingData (from `./PodLib/TalkingData`)
+  - TCMBase (from `./PodLib/TCMBase`)
+  - TCMComponent (from `./PodLib/TCMComponent`)
+  - TCMNetworkingKit (from `./PodLib/TCMNetworkingKit`)
+  - TencentOpenAPI (from `./PodLib/TencentOpenAPI`)
+  - YYKit (~> 1.0.9)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Masonry
+    - YYKit
+
+EXTERNAL SOURCES:
+  HomeModule:
+    :path: "./PodLib/HomeModule"
+  LoginModule:
+    :path: "./PodLib/LoginModule"
+  NTalkerSDK:
+    :path: "./PodLib/NTalkerSDK"
+  TalkingData:
+    :path: "./PodLib/TalkingData"
+  TCMBase:
+    :path: "./PodLib/TCMBase"
+  TCMComponent:
+    :path: "./PodLib/TCMComponent"
+  TCMNetworkingKit:
+    :path: "./PodLib/TCMNetworkingKit"
+  TencentOpenAPI:
+    :path: "./PodLib/TencentOpenAPI"
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  HomeModule: 4fb1c39018b9b423c0985a54d712d62fd7590574
+  LoginModule: ced70fe3754d368f93a9dc97d1ae4a048f538214
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  NTalkerSDK: b6ee1ee521f7c3431711ea7528bcee0ae14d94c2
+  TalkingData: 7b8d25c1d22ae5f4ff100bb2c71130f91e6c0a40
+  TCMBase: 64d6ae161625e31935ae29c99cd0b86b099075c2
+  TCMComponent: b9a1b446c9fcb5ee617bd29dbf137bf17526cf7f
+  TCMNetworkingKit: d89bf5d19335e36eedcfc0dd0a36ad0a5b8dfa30
+  TencentOpenAPI: d97d01ba6fb04eee7b446487e51c53937f435975
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 10670435a350c64b22bcb3ca0722544d997e94ae
+
+COCOAPODS: 1.5.2

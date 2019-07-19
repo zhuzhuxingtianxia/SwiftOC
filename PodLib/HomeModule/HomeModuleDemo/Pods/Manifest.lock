@@ -1,0 +1,22 @@
+PODS:
+  - HomeModule (0.0.1):
+    - TCMBase
+  - TCMBase (0.0.1)
+
+DEPENDENCIES:
+  - HomeModule (from `../`)
+  - TCMBase (from `../../TCMBase`)
+
+EXTERNAL SOURCES:
+  HomeModule:
+    :path: "../"
+  TCMBase:
+    :path: "../../TCMBase"
+
+SPEC CHECKSUMS:
+  HomeModule: 4fb1c39018b9b423c0985a54d712d62fd7590574
+  TCMBase: 64d6ae161625e31935ae29c99cd0b86b099075c2
+
+PODFILE CHECKSUM: d5593553c80db700305903c55e5d324af5fcb872
+
+COCOAPODS: 1.5.2

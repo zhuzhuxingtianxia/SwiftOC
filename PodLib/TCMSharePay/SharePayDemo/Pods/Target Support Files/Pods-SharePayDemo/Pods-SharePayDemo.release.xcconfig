@@ -1,0 +1,11 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) '$(PODS_ROOT)/WeexSDK' "${PODS_ROOT}/AlipaySDK-iOS" "${PODS_ROOT}/../../../TencentOpenAPI/TencentOpenAPI"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AlipaySDK-iOS" "${PODS_ROOT}/Headers/Public/TCMSharePay" "${PODS_ROOT}/Headers/Public/TencentOpenAPI" "${PODS_ROOT}/Headers/Public/WechatOpenSDK" "${PODS_ROOT}/Headers/Public/WeexSDK"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/TCMSharePay" "${PODS_CONFIGURATION_BUILD_DIR}/WeexSDK" "${PODS_ROOT}/WechatOpenSDK/WeChatSDK1.8.4"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AlipaySDK-iOS" -isystem "${PODS_ROOT}/Headers/Public/TCMSharePay" -isystem "${PODS_ROOT}/Headers/Public/TencentOpenAPI" -isystem "${PODS_ROOT}/Headers/Public/WechatOpenSDK" -isystem "${PODS_ROOT}/Headers/Public/WeexSDK"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"TCMSharePay" -l"WeChatSDK" -l"WeexSDK" -l"c++" -l"sqlite3.0" -l"z" -framework "AVFoundation" -framework "AVKit" -framework "AlipaySDK" -framework "CFNetwork" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreMotion" -framework "CoreTelephony" -framework "CoreText" -framework "Foundation" -framework "GLKit" -framework "JavaScriptCore" -framework "MediaPlayer" -framework "OpenGLES" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "TencentOpenAPI" -framework "UIKit"
+OTHER_LINK_FLAG = $(inherited) -ObjC
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
