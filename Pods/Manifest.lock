@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - HomeModule (0.0.1):
     - TCMBase
+    - TCMComponent
   - Kingfisher (4.10.1)
   - LoginModule (0.0.1):
     - TCMBase
@@ -72,7 +73,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  HomeModule: 1a2cdd0e1ebbc6153f95431d3a4a912fae673a44
+  HomeModule: 5fcb1784db9f7ab6591e048bc21d27efbe2580bd
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LoginModule: d70eb65d968a0011ffc72bd623ad01bae339064d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201

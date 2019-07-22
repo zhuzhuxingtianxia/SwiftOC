@@ -13,11 +13,11 @@ extension UIColor {
      - parameter hex: 16进制字符串
      - returns: RGB
      */
-    static func hexString (hex: String) -> UIColor {
+    public static func hexString (hex: String) -> UIColor {
         
         return UIColor.hexString(hex: hex, alpha: 1.0)
     }
-    static func hexString (hex: String,alpha: CGFloat) -> UIColor {
+    public static func hexString (hex: String,alpha: CGFloat) -> UIColor {
         
         var cString: String = hex.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).uppercased()
         

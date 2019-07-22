@@ -17,7 +17,7 @@ public enum ImageAlignmentStyle : Int {
 
 extension UIButton {
 
-    func layoutButton(style: ImageAlignmentStyle, space: CGFloat) {
+    open func layoutButton(style: ImageAlignmentStyle, space: CGFloat) {
         //得到imageView和titleLabel的宽高
         let imageWidth = imageView?.frame.size.width
         let imageHeight = imageView?.frame.size.height

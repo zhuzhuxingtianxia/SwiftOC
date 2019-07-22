@@ -138,5 +138,6 @@ Pod::Spec.new do |spec|
   # spec.dependency "JSONKit", "~> 1.4"
   # 需要在Podfile中该本地库路径，但l依赖本地库pod lib lint验证是不能通过的。
   spec.dependency "TCMBase"
+  spec.dependency "TCMComponent"
   
 end

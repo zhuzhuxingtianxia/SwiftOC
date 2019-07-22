@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEA93599407D1DF6251BDF8DDE26BED5"
+               BlueprintIdentifier = "5ED730089FF4551BDF79B0BBF697ADEF"
                BuildableName = "TCMComponent.framework"
                BlueprintName = "TCMComponent"
                ReferencedContainer = "container:Pods.xcodeproj">

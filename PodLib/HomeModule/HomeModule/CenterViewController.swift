@@ -7,6 +7,7 @@
 
 import UIKit
 import TCMBase
+import TCMComponent
 
 class CenterViewController: UIViewController {
     
