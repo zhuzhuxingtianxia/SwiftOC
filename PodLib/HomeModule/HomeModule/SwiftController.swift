@@ -18,10 +18,18 @@ class SwiftController: UIViewController {
         btn.frame = CGRect.init(x: 20, y: 100, width: 80, height: 40)
         return btn
     }()
-    
+    var imgView:UIImageView = {
+        let img = UIImageView.init()
+        img.frame = CGRect.init(x: 10, y: 200, width: 40, height: 40)
+        img.backgroundColor = UIColor.red
+        let image = UIImage.init(named: "welfare", in: Bundle.init(for: SwiftController.self), compatibleWith: nil)
+        img.image = image
+        
+        return img
+    }()
     var label:UILabel = {
        let label = UILabel.init()
-        label.frame = CGRect.init(x: 40, y: 200, width: 300, height: 40)
+        label.frame = CGRect.init(x: 60, y: 200, width: 300, height: 40)
         return label
         
     }()
@@ -33,6 +41,8 @@ class SwiftController: UIViewController {
         
         view.addSubview(button)
         view.addSubview(label)
+        view.addSubview(imgView)
+        
     }
     
     // MARK: - Action

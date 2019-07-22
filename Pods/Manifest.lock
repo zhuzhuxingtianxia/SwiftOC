@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - HomeModule (0.0.1):
     - TCMBase
+  - Kingfisher (4.10.1)
   - LoginModule (0.0.1):
     - TCMBase
   - Masonry (1.1.0)
@@ -23,6 +24,7 @@ PODS:
   - TalkingData (4.0.34)
   - TCMBase (0.0.1)
   - TCMComponent (0.0.1):
+    - Kingfisher (~> 4.10.0)
     - YYKit (~> 1.0.9)
   - TCMNetworkingKit (1.0.0):
     - AFNetworking (~> 3.2.1)
@@ -46,6 +48,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Kingfisher
     - Masonry
     - YYKit
 
@@ -69,17 +72,18 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  HomeModule: 4fb1c39018b9b423c0985a54d712d62fd7590574
-  LoginModule: ced70fe3754d368f93a9dc97d1ae4a048f538214
+  HomeModule: 1a2cdd0e1ebbc6153f95431d3a4a912fae673a44
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  LoginModule: d70eb65d968a0011ffc72bd623ad01bae339064d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  NTalkerSDK: b6ee1ee521f7c3431711ea7528bcee0ae14d94c2
-  TalkingData: 7b8d25c1d22ae5f4ff100bb2c71130f91e6c0a40
-  TCMBase: 64d6ae161625e31935ae29c99cd0b86b099075c2
-  TCMComponent: b9a1b446c9fcb5ee617bd29dbf137bf17526cf7f
-  TCMNetworkingKit: d89bf5d19335e36eedcfc0dd0a36ad0a5b8dfa30
-  TencentOpenAPI: d97d01ba6fb04eee7b446487e51c53937f435975
+  NTalkerSDK: 9aa74e4155a478ed782f13c3315b02b0775bd817
+  TalkingData: 85eb1e4238d953bd097372dea54c2fdcf071708c
+  TCMBase: 7c20157be026c4c917e08bf6008b195e7a91ce77
+  TCMComponent: 59433192a00e0e7fba1a8087d630b1dba066d93b
+  TCMNetworkingKit: 1a5580be627e00b2a7f43851973ef509a4abe930
+  TencentOpenAPI: 21cbc3a1eadd592c7081a19b6b0570864955fb2b
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
 PODFILE CHECKSUM: 10670435a350c64b22bcb3ca0722544d997e94ae
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.6.1

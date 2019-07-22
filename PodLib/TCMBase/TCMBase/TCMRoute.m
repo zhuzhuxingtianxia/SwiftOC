@@ -47,6 +47,10 @@ static TCMRoute *route = nil;
     if ([target containsString:@"."]) {
         //swift需要使用Bundle的命名前缀
         vcInstance = [protocolClass routeWithParams:params];
+        if (!vcInstance) {
+            NSLog(@"swift class not implementation TCMRouteProtocol");
+            return nil;
+        }
     } else if ([protocolClass respondsToSelector:@selector(routeWithParams:)]){
         vcInstance = [protocolClass routeWithParams:params];
     }else {

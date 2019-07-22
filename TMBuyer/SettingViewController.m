@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "TMBuyer-Swift.h"
+#import <TCMBase/TCMBase.h>
 
 @interface SettingViewController ()
 
@@ -19,10 +20,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    XXViewController *xx = [XXViewController new];
-    xx.title = @"从OC来到swift";
+}
+- (IBAction)centerAction:(id)sender {
+     [TCMRoute routeWithTarget:@"HomeModule.CenterViewController" params:@{}];
 }
 
+- (IBAction)toXXView:(id)sender {
+    
+    XXViewController *xx = [XXViewController new];
+    xx.title = @"从OC来到swift";
+    
+}
 
 
 /*

@@ -15,10 +15,13 @@
     "git": "https://github.com/TCMComponent.git",
     "tag": "0.0.1"
   },
-  "source_files": "TCMComponent/**/*.{h,m}",
+  "source_files": "TCMComponent/**/*.{h,m,swift}",
   "dependencies": {
     "YYKit": [
       "~> 1.0.9"
+    ],
+    "Kingfisher": [
+      "~> 4.10.0"
     ]
   }
 }

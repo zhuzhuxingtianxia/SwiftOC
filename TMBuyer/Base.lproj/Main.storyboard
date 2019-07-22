@@ -54,14 +54,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qv-g1-xtv">
-                                <rect key="frame" x="156.5" y="218.5" width="62" height="30"/>
-                                <state key="normal" title="设置界面"/>
+                                <rect key="frame" x="141.5" y="218.5" width="92" height="30"/>
+                                <state key="normal" title="个人中心界面"/>
+                                <connections>
+                                    <action selector="centerAction:" destination="cRn-E3-hw3" eventType="touchUpInside" id="FRq-78-0bv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlM-G1-wTz">
+                                <rect key="frame" x="127" y="318" width="121" height="30"/>
+                                <state key="normal" title="XXViewController"/>
+                                <connections>
+                                    <action selector="toXXView:" destination="cRn-E3-hw3" eventType="touchUpInside" id="vl4-8p-5lF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="UlM-G1-wTz" firstAttribute="top" secondItem="0qv-g1-xtv" secondAttribute="bottom" constant="69.5" id="Jdu-rZ-Jce"/>
                             <constraint firstItem="0qv-g1-xtv" firstAttribute="centerX" secondItem="Xnl-q8-8TN" secondAttribute="centerX" id="Rq4-JO-c7a"/>
                             <constraint firstItem="0qv-g1-xtv" firstAttribute="centerY" secondItem="Xnl-q8-8TN" secondAttribute="centerY" constant="-100" id="sTa-4J-9rg"/>
+                            <constraint firstItem="UlM-G1-wTz" firstAttribute="centerX" secondItem="Xnl-q8-8TN" secondAttribute="centerX" id="t9Y-Ms-4sN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nFs-od-sqG"/>
                     </view>
