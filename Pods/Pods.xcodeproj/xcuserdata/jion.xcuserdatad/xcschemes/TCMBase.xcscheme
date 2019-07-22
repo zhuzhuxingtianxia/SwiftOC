@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C54B105A48088FE07AC5B8BC42C97C45"
+               BlueprintIdentifier = "012CC1D17F89F228CB272FBBA41FBF1F"
                BuildableName = "TCMBase.framework"
                BlueprintName = "TCMBase"
                ReferencedContainer = "container:Pods.xcodeproj">

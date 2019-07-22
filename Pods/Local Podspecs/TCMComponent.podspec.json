@@ -16,6 +16,7 @@
     "tag": "0.0.1"
   },
   "source_files": "TCMComponent/**/*.{h,m,swift}",
+  "resources": "TCMComponent/**/*.{png,xcassets}",
   "dependencies": {
     "YYKit": [
       "~> 1.0.9"

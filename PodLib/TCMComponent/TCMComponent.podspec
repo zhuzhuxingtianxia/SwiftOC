@@ -106,7 +106,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  # spec.resources = "Resources/*.png"
+  spec.resources = "TCMComponent/**/*.{png,xcassets}"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
