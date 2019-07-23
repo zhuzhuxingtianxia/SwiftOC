@@ -30,6 +30,8 @@ class CenterViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         
         buildView()
     }
@@ -78,6 +80,13 @@ extension CenterViewController {
     }
 }
 
+//MARK: - CyclePageViewDelegate
+extension CenterViewController: CyclePageViewDelegate {
+    func cycleScrollView(_ cycleScrollView: CyclePageView, didSelectItemIndex index: NSInteger) {
+        print("\(index)")
+    }
+}
+
 protocol CombProperties {
     
 }
@@ -113,6 +122,7 @@ extension CenterViewController: CombProperties {
         headerIocn?.addGestureRecognizer(tapUserInfo)
     
         userNameLabel = UILabel.init()
+        userNameLabel?.isUserInteractionEnabled = true
         userNameLabel?.frame = CGRect.init(x: headerIocn!.frame.maxX+10, y: headerIocn!.frame.minY, width: 200, height: 40)
         userNameLabel?.font = UIFont.systemFont(ofSize: 22)
         userNameLabel?.textColor = UIColor.white
@@ -201,7 +211,7 @@ extension CenterViewController: CombProperties {
             let image = UIImage.init(named: orderIcon["img"]!, in: Bundle.init(for: type(of: self)), compatibleWith: nil)
             orderItem.setImage(image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: UIControl.State.normal)
             orderItem.layoutButton(style: .Top, space: 8)
-            
+            orderItem.addTarget(self, action: #selector(jumpEvent(sender:)), for: UIControl.Event.touchUpInside)
             orderStateView.addSubview(orderItem)
             
         }
@@ -212,6 +222,56 @@ extension CenterViewController: CombProperties {
         logisticsCard.backgroundColor = UIColor.hexString(hex: "#f6f6f6")
         logisticsCard.layer.cornerRadius = 10
         orderCard.addSubview(logisticsCard)
+        //物流内容
+        let logContentView = UIView.init()
+        logContentView.frame = logisticsCard.bounds
+        logisticsCard.addSubview(logContentView)
+        //物流信息-top信息
+        let logTimeView = UIView.init()
+        logTimeView.frame = CGRect.init(x: 0, y: 0, width: logContentView.frame.width, height: 30)
+        logContentView.addSubview(logTimeView)
+    
+    
+        let logTitleLabel = UILabel.init()
+        logTitleLabel.frame = CGRect.init(x: 12, y: 5, width: 100, height: 20)
+        logTitleLabel.font = UIFont.systemFont(ofSize: 11)
+        logTitleLabel.textColor = UIColor.hexString(hex: "#666666")
+        logTitleLabel.text = "最新物流"
+        logTimeView.addSubview(logTitleLabel)
+    
+        let logTimeLabel = UILabel.init()
+        logTimeLabel.frame = CGRect.init(x: logTimeView.frame.width - 100-12, y: 5, width: 100, height: 20)
+        logTimeLabel.textAlignment = .right
+        logTimeLabel.font = UIFont.systemFont(ofSize: 11)
+        logTimeLabel.textColor = UIColor.hexString(hex: "#666666")
+        logTimeLabel.text = "12:35"
+        logTimeView.addSubview(logTimeLabel)
+    
+        //物流信息-bottom信息
+        let goodsImg = UIImageView.init()
+        goodsImg.frame = CGRect.init(x: 12, y: logTimeView.frame.maxY, width: 50, height: 37)
+        goodsImg.backgroundColor = UIColor.white
+        logContentView.addSubview(goodsImg)
+    
+        let markImg = UIImageView.init()
+        markImg.frame = CGRect.init(x: goodsImg.frame.maxX + 10, y: goodsImg.frame.minY, width: 20, height: 20)
+        markImg.contentMode = .scaleAspectFit
+        markImg.image = UIImage.init(named: "yunshuzhong", in: Bundle.init(for: type(of: self)), compatibleWith: nil)
+        logContentView.addSubview(markImg)
+    
+        let stateLabel = UILabel.init()
+        stateLabel.frame = CGRect.init(x: markImg.frame.maxX+5, y: goodsImg.frame.minY, width: 100, height: 20)
+        stateLabel.font = UIFont.systemFont(ofSize: 11)
+        stateLabel.textColor = UIColor.hexString(hex: "#3399ff")
+        stateLabel.text = "运输中"
+        logContentView.addSubview(stateLabel)
+    
+        let desInfoLabel = UILabel.init()
+        desInfoLabel.frame = CGRect.init(x: goodsImg.frame.maxX + 10, y: markImg.frame.maxY, width: 200, height: 16)
+        desInfoLabel.font = UIFont.systemFont(ofSize: 10)
+        desInfoLabel.textColor = UIColor.hexString(hex: "#666666")
+        desInfoLabel.text = "[上海市]上海市普陀区长风公司运输中"
+        logContentView.addSubview(desInfoLabel)
     
         let lastView = logisticsCard
     
@@ -226,6 +286,20 @@ extension CenterViewController: CombProperties {
         pageView.backgroundColor = UIColor.init(red: 254/255.0, green: 219/255.0, blue: 227/255.0, alpha: 1.0)
         
         scrollView.addSubview(pageView)
+    
+    let imgs = ["https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_01.jpg",
+                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_02.jpg",
+                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_03.jpg",
+                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_04.jpg",
+                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_05.jpg",
+                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_06.jpg"]
+        let cyclePageView = CyclePageView()
+        cyclePageView.frame = CGRect.init(x: 0, y: 0, width: pageView.frame.width, height: pageView.frame.height)
+        cyclePageView.delegate = self
+        cyclePageView.scrollDirection = .horizontal
+        cyclePageView.autoScrollTimeInterval = 3.0
+        cyclePageView.imagePaths = imgs
+        pageView.addSubview(cyclePageView)
         
         return pageView.frame.maxY
     }
@@ -263,7 +337,7 @@ extension CenterViewController: CombProperties {
             let image = UIImage.init(named: model["img"]!, in: Bundle.init(for: type(of: self)), compatibleWith: nil)
         item.setImage(image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: UIControl.State.normal)
             item.layoutButton(style: .Top, space: 8)
-            
+            item.addTarget(self, action: #selector(jumpEvent(sender:)), for: UIControl.Event.touchUpInside)
             commonView.addSubview(item)
             
         }

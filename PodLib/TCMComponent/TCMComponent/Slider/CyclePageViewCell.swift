@@ -87,7 +87,7 @@ class CyclePageViewCell: UICollectionViewCell {
     fileprivate func setupImageView() {
         imageView = UIImageView.init()
         // 默认模式
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         self.contentView.addSubview(imageView)
     }

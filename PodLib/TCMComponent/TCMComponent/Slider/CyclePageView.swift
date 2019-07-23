@@ -109,8 +109,8 @@ open class CyclePageView: UIView {
         }
     }
     
-    /// 滚动间隔时间,默认2秒
-    open var autoScrollTimeInterval: Double = 2.0 {
+    /// 滚动间隔时间,默认3.0秒
+    open var autoScrollTimeInterval: Double = 3.0 {
         didSet {
             autoScroll = true
         }
