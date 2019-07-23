@@ -11,6 +11,8 @@ import TCMComponent
 
 class CenterViewController: UIViewController {
     
+    fileprivate var topBgImg:UIImageView?
+    
     fileprivate var headerIocn:UIImageView?
     
     fileprivate var userNameLabel:UILabel?
@@ -21,6 +23,7 @@ class CenterViewController: UIViewController {
     
     let scrollView:UIScrollView = {
        let scroll = UIScrollView.init()
+//        scroll.delegate = CenterViewController.self()
         scroll.alwaysBounceVertical = true
         scroll.backgroundColor = UIColor.init(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
         return scroll
@@ -30,6 +33,12 @@ class CenterViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
+        if #available(iOS 11.0, *) {
+            scrollView.contentInsetAdjustmentBehavior = .never
+        } else {
+            // Fallback on earlier versions
+        }
+        
         navigationController?.isNavigationBarHidden = true
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         
@@ -38,6 +47,7 @@ class CenterViewController: UIViewController {
     
     func buildView() {
         view.addSubview(scrollView)
+        scrollView.delegate = self
         scrollView.frame = view.bounds
         
         let headerMaxY = buildHeaderView()
@@ -87,6 +97,20 @@ extension CenterViewController: CyclePageViewDelegate {
     }
 }
 
+//MARK: - UIScrollViewDelegate
+extension CenterViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        if offsetY <= 0 {
+            let bgImageH = topBgImg?.image?.size.height ?? 1
+            let totalOffset = bgImageH + abs(offsetY)
+            let scale = totalOffset / bgImageH
+            topBgImg?.transform = CGAffineTransform.init(a: scale, b: 0, c: 0, d: scale, tx: 0, ty: offsetY / 2.0)
+        }
+    }
+}
+
 protocol CombProperties {
     
 }
@@ -96,9 +120,9 @@ extension CenterViewController: CombProperties {
     
    fileprivate func buildHeaderView() -> CGFloat{
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: view.bounds.size.width, height: 205))
-        let topBgImg = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: headerView.bounds.size.width, height: 170))
-        topBgImg.image = UIImage.init(named: "bg", in: Bundle.init(for: CenterViewController.self), compatibleWith: nil)
-        headerView.addSubview(topBgImg)
+        topBgImg = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: headerView.bounds.size.width, height: 170))
+        topBgImg?.image = UIImage.init(named: "bg", in: Bundle.init(for: CenterViewController.self), compatibleWith: nil)
+        headerView.addSubview(topBgImg!)
     
         let settingBtn = UIButton.init(type: UIButton.ButtonType.system)
         settingBtn.frame = CGRect.init(x: view.bounds.size.width-40-10, y: 30, width: 40, height: 40)
@@ -126,7 +150,7 @@ extension CenterViewController: CombProperties {
         userNameLabel?.frame = CGRect.init(x: headerIocn!.frame.maxX+10, y: headerIocn!.frame.minY, width: 200, height: 40)
         userNameLabel?.font = UIFont.systemFont(ofSize: 22)
         userNameLabel?.textColor = UIColor.white
-        userNameLabel?.text = "登陆"
+        userNameLabel?.text = "登陆/注册"
         headerView.addSubview(userNameLabel!)
     
         let tapUserName = UITapGestureRecognizer.init(target: self, action: #selector(userInfoAction))
