@@ -23,7 +23,6 @@
     
 }
 
-
 - (IBAction)pushAction:(id)sender {
     [TCMRoute routeWithTarget:@"HomeViewController" params:@{@"title":@"这就是home的参数"}];
     

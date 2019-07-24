@@ -15,11 +15,13 @@ private var UIButton_badgePaddingKey : Void?
 private var UIButton_badgeMinSizeKey : Void?
 private var UIButton_badgeOriginXKey : Void?
 private var UIButton_badgeOriginYKey : Void?
+private var UIButton_badgeBorderWidthKey : Void?
+private var UIButton_badgeBorderColorKey : Void?
 private var UIButton_shouldHideBadgeAtZeroKey : Void?
 private var UIButton_shouldAnimateBadgeKey : Void?
 private var UIButton_badgeValueKey : Void?
 
-protocol BadgeValueProtocol {
+public protocol BadgeValueProtocol {
     /**
      * 角标值
      */
@@ -49,9 +51,18 @@ protocol BadgeValueProtocol {
      */
     var badgeOriginX: CGFloat { get set }
     /**
-     * badgeLabel OriginY
+     * badgeLabel OriginY,默认-4
      */
     var badgeOriginY: CGFloat { get set }
+    /**
+     * 角标边框宽度
+     */
+    var badgeBorderWidth: CGFloat? { get set }
+    /**
+     * 角标边框颜色
+     */
+    var badgeBorderColor: UIColor? { get set }
+    
     /**
      * 角标为0时，是否隐藏角标，默认true
      */
@@ -80,7 +91,7 @@ extension UIButton: BadgeValueProtocol {
     /**
      * 角标值
      */
-    var badgeValue : String?  {
+    public var badgeValue : String?  {
         get{
             return objc_getAssociatedObject(self, &UIButton_badgeValueKey) as? String
         }
@@ -110,7 +121,7 @@ extension UIButton: BadgeValueProtocol {
     /**
      * Badge background color
      */
-    var badgeBGColor: UIColor? {
+    public var badgeBGColor: UIColor? {
         get {
             return objc_getAssociatedObject(self, &UIButton_badgeBGColorKey) as? UIColor ?? .red
         }
@@ -124,7 +135,7 @@ extension UIButton: BadgeValueProtocol {
      * Badge text color
      */
     
-    var badgeTextColor: UIColor? {
+    public var badgeTextColor: UIColor? {
         get{
             return objc_getAssociatedObject(self, &UIButton_badgeTextColorKey) as? UIColor ?? .white
         }
@@ -138,7 +149,7 @@ extension UIButton: BadgeValueProtocol {
     /**
      * Badge font
      */
-    var badgeFont: UIFont? {
+    public var badgeFont: UIFont? {
         get {
             return objc_getAssociatedObject(self, &UIButton_badgeFontKey) as? UIFont ?? UIFont.systemFont(ofSize: 12)
         }
@@ -151,7 +162,7 @@ extension UIButton: BadgeValueProtocol {
     /**
      *  Padding value for the badge
      */
-    var badgePadding: CGFloat {
+    public var badgePadding: CGFloat {
         get{
             return  objc_getAssociatedObject(self, &UIButton_badgePaddingKey) as? CGFloat ?? 6
         }
@@ -164,7 +175,7 @@ extension UIButton: BadgeValueProtocol {
     /**
      * badgeLabel 最小尺寸
      */
-    var badgeMinSize: CGFloat {
+    public var badgeMinSize: CGFloat {
         get{
             return objc_getAssociatedObject(self, &UIButton_badgeMinSizeKey) as? CGFloat ?? 8
         }
@@ -177,7 +188,7 @@ extension UIButton: BadgeValueProtocol {
     /**
      *  badgeLabel OriginX
      */
-    var badgeOriginX: CGFloat {
+    public var badgeOriginX: CGFloat {
         get{
             return objc_getAssociatedObject(self, &UIButton_badgeOriginXKey) as? CGFloat ?? 0
         }
@@ -190,7 +201,7 @@ extension UIButton: BadgeValueProtocol {
     /**
      * badgeLabel OriginY
      */
-    var badgeOriginY: CGFloat  {
+    public var badgeOriginY: CGFloat  {
         get{
             return objc_getAssociatedObject(self, &UIButton_badgeOriginYKey) as? CGFloat ?? -4
         }
@@ -199,11 +210,34 @@ extension UIButton: BadgeValueProtocol {
             if (self.badgeLabel != nil) { updateBadgeFrame() }
         }
     }
-    
+    /**
+     * 角标边框宽度
+     */
+    public var badgeBorderWidth: CGFloat? {
+        get{
+            return  objc_getAssociatedObject(self, &UIButton_badgeBorderWidthKey) as? CGFloat ?? 0
+        }
+        set{
+            objc_setAssociatedObject(self, &UIButton_badgeBorderWidthKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            if (self.badgeLabel != nil) { updateBadgeFrame() }
+        }
+    }
+    /**
+     * 角标边框颜色
+     */
+    public var badgeBorderColor: UIColor? {
+        get{
+            return objc_getAssociatedObject(self, &UIButton_badgeBorderColorKey) as? UIColor
+        }
+        set{
+            objc_setAssociatedObject(self, &UIButton_badgeBorderColorKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            if (self.badgeLabel != nil) {  updateBadgeFrame()  }
+        }
+    }
     /**
      * In case of numbers, remove the badge when reaching zero
      */
-    var shouldHideBadgeAtZero: Bool  {
+    public var shouldHideBadgeAtZero: Bool  {
         get {
             return objc_getAssociatedObject(self, &UIButton_shouldHideBadgeAtZeroKey) as? Bool ?? true
         }
@@ -215,7 +249,7 @@ extension UIButton: BadgeValueProtocol {
     /**
      * Badge has a bounce animation when value changes
      */
-    var shouldAnimateBadge: Bool {
+    public var shouldAnimateBadge: Bool {
         get{
             return objc_getAssociatedObject(self, &UIButton_shouldAnimateBadgeKey) as? Bool ?? true
         }
@@ -226,8 +260,11 @@ extension UIButton: BadgeValueProtocol {
     
     
     fileprivate func badgeInit()  {
-        if let label = self.badgeLabel {
-            self.badgeOriginX   = self.frame.size.width - label.frame.size.width/2
+        if let label = self.badgeLabel, self.badgeOriginX == 0.0 {
+            self.badgeOriginX = self.frame.size.width - label.frame.size.width/2
+        }else {
+            let x = self.badgeOriginX
+            self.badgeOriginX = x
         }
         
         self.clipsToBounds = false
@@ -283,6 +320,13 @@ extension UIButton: BadgeValueProtocol {
         self.badgeLabel?.frame = CGRect(x: self.badgeOriginX, y: self.badgeOriginY, width: minWidth + padding, height: minHeight + padding)
         self.badgeLabel?.layer.cornerRadius = (minHeight + padding) / 2
         self.badgeLabel?.layer.masksToBounds = true
+        if  let borderWidth = self.badgeBorderWidth , borderWidth>0{
+            self.badgeLabel?.layer.borderWidth = borderWidth
+        }
+        
+        if  let color = self.badgeBorderColor {
+            self.badgeLabel?.layer.borderColor = color.cgColor
+        }
     }
     
     fileprivate func badgeExpectedSize() -> CGSize {

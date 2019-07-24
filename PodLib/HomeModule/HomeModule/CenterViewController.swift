@@ -29,6 +29,14 @@ class CenterViewController: UIViewController {
         return scroll
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -37,9 +45,8 @@ class CenterViewController: UIViewController {
             scrollView.contentInsetAdjustmentBehavior = .never
         } else {
             // Fallback on earlier versions
+            automaticallyAdjustsScrollViewInsets = false
         }
-        
-        navigationController?.isNavigationBarHidden = true
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         
         buildView()
@@ -236,6 +243,14 @@ extension CenterViewController: CombProperties {
             orderItem.setImage(image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: UIControl.State.normal)
             orderItem.layoutButton(style: .Top, space: 8)
             orderItem.addTarget(self, action: #selector(jumpEvent(sender:)), for: UIControl.Event.touchUpInside)
+            orderItem.badgeTextColor = UIColor.hexString(hex: "#f52e66")
+            orderItem.badgeFont = UIFont.systemFont(ofSize: 13)
+            orderItem.badgeBGColor = UIColor.white
+            orderItem.badgeOriginX = orderItem.frame.width/2.0 + 10
+            orderItem.badgeOriginY = 0
+            orderItem.badgeBorderWidth = 1.0
+            orderItem.badgeBorderColor = UIColor.hexString(hex: "#f52e66")
+            orderItem.badgeValue = "\(index*index*index*index*index)"
             orderStateView.addSubview(orderItem)
             
         }
