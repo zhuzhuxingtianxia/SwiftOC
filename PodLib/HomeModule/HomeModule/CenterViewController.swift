@@ -118,6 +118,74 @@ extension CenterViewController: UIScrollViewDelegate {
     }
 }
 
+//MARK: -
+extension CenterViewController:FlowPageViewDelegate {
+    func flowPageView(_ pageView:FlowPageView, pageItem item:Any) -> UIView {
+        //物流信息
+        let logisticsCard = UIView.init()
+        logisticsCard.frame = CGRect.init(x: 0, y: 0, width: pageView.frame.width, height: pageView.frame.height)
+        logisticsCard.backgroundColor = UIColor.hexString(hex: "#f6f6f6")
+        logisticsCard.layer.cornerRadius = 10
+        
+        //物流内容
+        let logContentView = UIView.init()
+        logContentView.frame = logisticsCard.bounds
+        logisticsCard.addSubview(logContentView)
+        //物流信息-top信息
+        let logTimeView = UIView.init()
+        logTimeView.frame = CGRect.init(x: 0, y: 0, width: logContentView.frame.width, height: 30)
+        logContentView.addSubview(logTimeView)
+        
+        
+        let logTitleLabel = UILabel.init()
+        logTitleLabel.frame = CGRect.init(x: 12, y: 5, width: 100, height: 20)
+        logTitleLabel.font = UIFont.systemFont(ofSize: 11)
+        logTitleLabel.textColor = UIColor.hexString(hex: "#666666")
+        logTitleLabel.text = "最新物流"+"\(item)"
+        logTimeView.addSubview(logTitleLabel)
+        
+        let logTimeLabel = UILabel.init()
+        logTimeLabel.frame = CGRect.init(x: logTimeView.frame.width - 100-12, y: 5, width: 100, height: 20)
+        logTimeLabel.textAlignment = .right
+        logTimeLabel.font = UIFont.systemFont(ofSize: 11)
+        logTimeLabel.textColor = UIColor.hexString(hex: "#666666")
+        logTimeLabel.text = "12:35"
+//        logTimeView.addSubview(logTimeLabel)
+        
+        //物流信息-bottom信息
+        let goodsImg = UIImageView.init()
+        goodsImg.frame = CGRect.init(x: 12, y: logTimeView.frame.maxY, width: 50, height: 37)
+        goodsImg.backgroundColor = UIColor.white
+        logContentView.addSubview(goodsImg)
+        
+        let markImg = UIImageView.init()
+        markImg.frame = CGRect.init(x: goodsImg.frame.maxX + 10, y: goodsImg.frame.minY, width: 20, height: 20)
+        markImg.contentMode = .scaleAspectFit
+        markImg.image = UIImage.init(named: "yunshuzhong", in: Bundle.init(for: type(of: self)), compatibleWith: nil)
+        logContentView.addSubview(markImg)
+        
+        let stateLabel = UILabel.init()
+        stateLabel.frame = CGRect.init(x: markImg.frame.maxX+5, y: goodsImg.frame.minY, width: 100, height: 20)
+        stateLabel.font = UIFont.systemFont(ofSize: 11)
+        stateLabel.textColor = UIColor.hexString(hex: "#3399ff")
+        stateLabel.text = "运输中"
+        logContentView.addSubview(stateLabel)
+        
+        let desInfoLabel = UILabel.init()
+        desInfoLabel.frame = CGRect.init(x: goodsImg.frame.maxX + 10, y: markImg.frame.maxY, width: 200, height: 16)
+        desInfoLabel.font = UIFont.systemFont(ofSize: 10)
+        desInfoLabel.textColor = UIColor.hexString(hex: "#666666")
+        desInfoLabel.text = "[上海市]上海市普陀区长风公司运输中"
+        logContentView.addSubview(desInfoLabel)
+        
+        return logisticsCard
+    }
+    
+    func flowPageView(_ pageView:FlowPageView,didSelectIndex index: NSInteger){
+        
+    }
+}
+
 protocol CombProperties {
     
 }
@@ -255,64 +323,12 @@ extension CenterViewController: CombProperties {
             
         }
     
-        //物流信息
-        let logisticsCard = UIView.init()
-        logisticsCard.frame = CGRect.init(x: 15, y: orderStateView.frame.maxY+10, width: orderCard.frame.width-30, height: 75)
-        logisticsCard.backgroundColor = UIColor.hexString(hex: "#f6f6f6")
-        logisticsCard.layer.cornerRadius = 10
-        orderCard.addSubview(logisticsCard)
-        //物流内容
-        let logContentView = UIView.init()
-        logContentView.frame = logisticsCard.bounds
-        logisticsCard.addSubview(logContentView)
-        //物流信息-top信息
-        let logTimeView = UIView.init()
-        logTimeView.frame = CGRect.init(x: 0, y: 0, width: logContentView.frame.width, height: 30)
-        logContentView.addSubview(logTimeView)
+        let flowLogCard = FlowPageView.init(frame: CGRect.init(x: 15, y: orderStateView.frame.maxY+10, width: orderCard.frame.width-30, height: 75))
+        flowLogCard.delegate = self
+    flowLogCard.items = ["1","2"] as Array<Any>
+        orderCard.addSubview(flowLogCard)
     
-    
-        let logTitleLabel = UILabel.init()
-        logTitleLabel.frame = CGRect.init(x: 12, y: 5, width: 100, height: 20)
-        logTitleLabel.font = UIFont.systemFont(ofSize: 11)
-        logTitleLabel.textColor = UIColor.hexString(hex: "#666666")
-        logTitleLabel.text = "最新物流"
-        logTimeView.addSubview(logTitleLabel)
-    
-        let logTimeLabel = UILabel.init()
-        logTimeLabel.frame = CGRect.init(x: logTimeView.frame.width - 100-12, y: 5, width: 100, height: 20)
-        logTimeLabel.textAlignment = .right
-        logTimeLabel.font = UIFont.systemFont(ofSize: 11)
-        logTimeLabel.textColor = UIColor.hexString(hex: "#666666")
-        logTimeLabel.text = "12:35"
-        logTimeView.addSubview(logTimeLabel)
-    
-        //物流信息-bottom信息
-        let goodsImg = UIImageView.init()
-        goodsImg.frame = CGRect.init(x: 12, y: logTimeView.frame.maxY, width: 50, height: 37)
-        goodsImg.backgroundColor = UIColor.white
-        logContentView.addSubview(goodsImg)
-    
-        let markImg = UIImageView.init()
-        markImg.frame = CGRect.init(x: goodsImg.frame.maxX + 10, y: goodsImg.frame.minY, width: 20, height: 20)
-        markImg.contentMode = .scaleAspectFit
-        markImg.image = UIImage.init(named: "yunshuzhong", in: Bundle.init(for: type(of: self)), compatibleWith: nil)
-        logContentView.addSubview(markImg)
-    
-        let stateLabel = UILabel.init()
-        stateLabel.frame = CGRect.init(x: markImg.frame.maxX+5, y: goodsImg.frame.minY, width: 100, height: 20)
-        stateLabel.font = UIFont.systemFont(ofSize: 11)
-        stateLabel.textColor = UIColor.hexString(hex: "#3399ff")
-        stateLabel.text = "运输中"
-        logContentView.addSubview(stateLabel)
-    
-        let desInfoLabel = UILabel.init()
-        desInfoLabel.frame = CGRect.init(x: goodsImg.frame.maxX + 10, y: markImg.frame.maxY, width: 200, height: 16)
-        desInfoLabel.font = UIFont.systemFont(ofSize: 10)
-        desInfoLabel.textColor = UIColor.hexString(hex: "#666666")
-        desInfoLabel.text = "[上海市]上海市普陀区长风公司运输中"
-        logContentView.addSubview(desInfoLabel)
-    
-        let lastView = logisticsCard
+        let lastView = flowLogCard
     
         let newFrame = CGRect(origin: orderCard.frame.origin, size: CGSize.init(width: orderCard.frame.size.width, height: lastView.frame.maxY+20))
         orderCard.frame = newFrame
@@ -328,10 +344,10 @@ extension CenterViewController: CombProperties {
     
     let imgs = ["https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_01.jpg",
                 "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_02.jpg",
-                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_03.jpg",
-                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_04.jpg",
-                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_05.jpg",
-                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_06.jpg"]
+                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_03.jpg",]
+//                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_04.jpg",
+//                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_05.jpg",
+//                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_06.jpg"]
         let cyclePageView = CyclePageView()
         cyclePageView.frame = CGRect.init(x: 0, y: 0, width: pageView.frame.width, height: pageView.frame.height)
         cyclePageView.delegate = self

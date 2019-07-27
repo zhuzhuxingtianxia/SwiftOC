@@ -627,10 +627,7 @@ extension CyclePageView {
         }
         
         if collectionView.contentOffset.x == 0 && totalItemsCount > 0 {
-            var targetIndex = 0
-            if infiniteLoop {
-                targetIndex = totalItemsCount/2
-            }
+            let targetIndex = 0
             collectionView.scrollToItem(at: IndexPath.init(item: targetIndex, section: 0), at: position, animated: false)
         }
     }
@@ -680,7 +677,7 @@ extension CyclePageView {
     func scollToIndex(targetIndex: Int) {
         if targetIndex >= totalItemsCount {
             if infiniteLoop {
-                collectionView.scrollToItem(at: IndexPath.init(item: Int(totalItemsCount/2), section: 0), at: position, animated: false)
+                collectionView.scrollToItem(at: IndexPath.init(item: 0, section: 0), at: position, animated: false)
             }
             return
         }
