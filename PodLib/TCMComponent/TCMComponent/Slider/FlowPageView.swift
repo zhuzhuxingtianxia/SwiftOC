@@ -83,7 +83,7 @@ extension FlowPageView:UICollectionViewDelegate,UICollectionViewDataSource {
         return cell
     }
     public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        //放置内存持续增加
+        //防止内存持续增加
        let subViews = cell.contentView.subviews
         for subview in subViews {
             subview.removeFromSuperview()

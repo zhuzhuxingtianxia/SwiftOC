@@ -323,12 +323,14 @@ extension CenterViewController: CombProperties {
             
         }
     
+        var lastView = orderStateView
+    
         let flowLogCard = FlowPageView.init(frame: CGRect.init(x: 15, y: orderStateView.frame.maxY+10, width: orderCard.frame.width-30, height: 75))
         flowLogCard.delegate = self
-    flowLogCard.items = ["1","2"] as Array<Any>
+        flowLogCard.items = ["1","2"] as Array<Any>
         orderCard.addSubview(flowLogCard)
     
-        let lastView = flowLogCard
+         lastView = flowLogCard
     
         let newFrame = CGRect(origin: orderCard.frame.origin, size: CGSize.init(width: orderCard.frame.size.width, height: lastView.frame.maxY+20))
         orderCard.frame = newFrame
@@ -344,10 +346,10 @@ extension CenterViewController: CombProperties {
     
     let imgs = ["https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_01.jpg",
                 "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_02.jpg",
-                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_03.jpg",]
-//                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_04.jpg",
-//                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_05.jpg",
-//                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_06.jpg"]
+                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_03.jpg",
+                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_04.jpg",
+                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_05.jpg",
+                "https://s3.cn-north-1.amazonaws.com.cn/h5.taocaimall.net/app/banner/2017/images/0307/pic_06.jpg"]
         let cyclePageView = CyclePageView()
         cyclePageView.frame = CGRect.init(x: 0, y: 0, width: pageView.frame.width, height: pageView.frame.height)
         cyclePageView.delegate = self
@@ -355,7 +357,7 @@ extension CenterViewController: CombProperties {
         cyclePageView.autoScrollTimeInterval = 3.0
         cyclePageView.imagePaths = imgs
         pageView.addSubview(cyclePageView)
-        
+    
         return pageView.frame.maxY
     }
     
