@@ -23,7 +23,20 @@ open class ZJTabPageView: UIView {
                     currentIndex = dataSource.count - 1
                 }
                 collectionView.scrollToItem(at: IndexPath.init(item: currentIndex, section: 0), at: .centeredHorizontally, animated: false)
-               moveIndicator(animated: false)
+                // + .milliseconds(300)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.15) {
+                    let titleWidth = self.getContentWidth(title: self.dataSource[self.currentIndex])
+                    let itemW = self.itemWidth ?? titleWidth
+                    self.indicator.bounds = CGRect.init(x: 0, y: 0, width: itemW, height: self.indicator.bounds.height)
+                    self.moveIndicator(animated: false)
+                }
+               
+            }else {
+                if itemWidth == nil {
+                    let titleWidth = getContentWidth(title: dataSource[currentIndex])
+                    indicator.bounds = CGRect.init(x: 0, y: 0, width: titleWidth, height: indicator.bounds.height)
+                }
+                moveIndicator(animated: false)
             }
         }
     }
@@ -38,16 +51,6 @@ open class ZJTabPageView: UIView {
             
             didSelectItemAtIndexPath(indexPath: indexPath)
             
-            /*
-            currentIndex = newValue
-            
-            if  dataSource.count>0 {
-                if currentIndex > dataSource.count {
-                    currentIndex = dataSource.count - 1
-                }
-                collectionView.scrollToItem(at: IndexPath.init(item: currentIndex, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: false)
-                moveIndicator(animated: false)
-            }*/
         }
         
         get {
@@ -90,12 +93,20 @@ open class ZJTabPageView: UIView {
             indicator.bounds.size = CGSize.init(width: itemWidth!, height: indicator.bounds.height)
         }
     }
+    /// item间隔
+    open var itemSpacing: CGFloat = 10
+    
     ///选中的item的索引值
     fileprivate var currentIndex: NSInteger = 0
     
     //item默认宽,设置get方法只读模式
     fileprivate var nomalItemWidth:CGFloat {
-        return 60.0
+        return 40.0
+    }
+    
+    fileprivate var fontScale:CGFloat {
+        let fontScale = titleSelectFont.pointSize/titleNomalFont.pointSize
+        return fontScale
     }
     
     /// 容器 UICollectionView
@@ -158,23 +169,14 @@ open class ZJTabPageView: UIView {
         super.layoutSubviews()
     }
     
-    open override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
-    }
-    open override func willMove(toWindow newWindow: UIWindow?) {
-        if newWindow == nil {
-            
-        }else{
-            
-        }
-    }
-    
     fileprivate func moveIndicator(animated: Bool) {
         let cell = collectionView.cellForItem(at: IndexPath.init(item: currentIndex, section: 0))
+    
         var postionX:CGFloat = 0
         if cell == nil {
-            let itemW = itemWidth ?? nomalItemWidth
-            postionX = itemW/2.0 + CGFloat(currentIndex) * itemW
+            let titleWidth = dataSource.count>0 ? getContentWidth(title: dataSource[currentIndex]):nomalItemWidth
+            let itemW = itemWidth ?? titleWidth
+            postionX = (itemW + itemSpacing) / 2.0 + CGFloat(currentIndex) * itemW
         }else {
             postionX = (cell?.center.x)!
         }
@@ -220,17 +222,37 @@ extension ZJTabPageView:UICollectionViewDataSource {
 extension ZJTabPageView: UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-         let itemW = itemWidth ?? nomalItemWidth
+        
+        var titleWidth = getContentWidth(title: dataSource[indexPath.item])
+        if currentIndex == indexPath.item {
+            titleWidth *= fontScale
+        }
+        let itemW = itemWidth ?? titleWidth
+        
         return CGSize.init(width: itemW, height: collectionView.bounds.height)
     }
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets.init(top: 0, left: itemSpacing/2.0, bottom: 0, right: itemSpacing/2.0)
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat{
         
         return 0
     }
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return itemSpacing
     }
     
+    fileprivate func getContentWidth(title: String) -> CGFloat {
+        let size = CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: 50)
+       //NSAttributedString.Key.font或 kCTFontAttributeName
+        let attribute = [NSAttributedString.Key.font: titleSelectFont]
+        let options = NSStringDrawingOptions.usesLineFragmentOrigin.union(.usesFontLeading)
+        let rect = title.boundingRect(with: size, options: options, attributes: attribute, context: nil)
+        
+        return rect.width+1
+    }
 }
 
 //MARK: - UICollectionViewDelegate
@@ -258,13 +280,15 @@ extension ZJTabPageView: UICollectionViewDelegate {
         if targetCell != nil {
             targetCell!.label.textColor = titleSelectColor
         }
-        let fontScale = titleSelectFont.pointSize/titleNomalFont.pointSize
+        
         UIView.animate(withDuration: 0.15, animations: {
             if selectedCell != nil {
                 selectedCell?.label.transform = .identity
+//                selectedCell?.label.layer.transform = CATransform3DIdentity
             }
             if targetCell != nil {
-                targetCell?.label.transform = CGAffineTransform.init(scaleX: fontScale, y: fontScale)
+                targetCell?.label.transform = CGAffineTransform.init(scaleX: self.fontScale, y: self.fontScale)
+//                targetCell?.label.layer.transform = CATransform3DMakeScale(self.fontScale, self.fontScale, 1.0)
             }
             
         }) { (finished) in
@@ -279,6 +303,14 @@ extension ZJTabPageView: UICollectionViewDelegate {
         currentIndex = indexPath.item
         if currentIndex < dataSource.count {
             collectionView.scrollToItem(at: IndexPath.init(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+            
+            if itemWidth == nil {
+                let titleWidth = getContentWidth(title: dataSource[indexPath.item])
+                indicator.bounds = CGRect.init(x: 0, y: 0, width: titleWidth, height: indicator.bounds.height)
+            }else {
+                indicator.bounds = CGRect.init(x: 0, y: 0, width: itemWidth!, height: indicator.bounds.height)
+            }
+            
             moveIndicator(animated: true)
             
         }

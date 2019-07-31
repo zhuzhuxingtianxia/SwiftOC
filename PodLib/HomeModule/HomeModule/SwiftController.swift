@@ -38,12 +38,9 @@ class SwiftController: UIViewController {
     lazy var tabpage:ZJTabPageView = {
         let page = ZJTabPageView.init(frame: CGRect.init(x: 0, y: 300, width: UIScreen.main.bounds.size.width, height: 40))
         page.selectIndex = 1
-        
-        page.itemWidth = 60
-        page.titleSelectFont = UIFont.systemFont(ofSize: 18)
+//        page.itemWidth = 80
+        page.titleSelectFont = UIFont.systemFont(ofSize: 16)
         page.delegate = self
-        page.dataSource = ["标题1","标题2","标题3","标题4","标题5","标题6","标题7"]
-        
        return page;
     }()
     
@@ -58,7 +55,7 @@ class SwiftController: UIViewController {
         view.addSubview(label)
         view.addSubview(imgView)
         view.addSubview(tabpage)
-        
+        tabpage.dataSource = ["标题0","标题1标题1","标题234","标题3","标题400","标题5","标题6","标题7"]
         buildView()
     }
     
@@ -121,6 +118,7 @@ extension  SwiftController: UIScrollViewDelegate {
 extension  SwiftController: ZJTabPageViewDelegate {
     
    public func tabPageView(_ pageView:ZJTabPageView, didSelectIndex index: NSInteger){
+    print("oxoxoxox")
     contentScrollView.setContentOffset(CGPoint.init(x: contentScrollView.bounds.width * CGFloat(index), y: 0), animated: true)
     
     }
