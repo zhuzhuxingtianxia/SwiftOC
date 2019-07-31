@@ -50,13 +50,30 @@ open class ZJTabPageView: UIView {
             let indexPath = IndexPath.init(item: newValue, section: 0)
             
             didSelectItemAtIndexPath(indexPath: indexPath)
-            
+            guard itemWidth == nil else {
+                return
+            }
+            moveIndicator(animated: true)
         }
         
         get {
             return currentIndex
         }
     }
+    
+    /// 指示器移动比例,该属性必须设置itemWidth，否则无效
+    open var moveRatio: CGFloat? {
+        didSet {
+            guard hideIndicator == false,itemWidth != nil else {
+                return
+            }
+            
+            let ratio = moveRatio! > 1 ? 1 : moveRatio!
+            let centerX:CGFloat = (collectionView.contentSize.width - indicator.bounds.width - itemSpacing) * ratio + (indicator.bounds.width+itemSpacing)/2.0
+            indicator.center = CGPoint.init(x: centerX, y: collectionView.bounds.height - indicatorHeight/2.0)
+        }
+    }
+    
     
     // 未选中字体颜色
     open var titleNormalColor:UIColor = UIColor.black
@@ -80,9 +97,9 @@ open class ZJTabPageView: UIView {
         }
     }
     //是否隐藏指示器
-    open var hideIndicator: Bool? {
+    open var hideIndicator: Bool = false {
         didSet {
-            indicator.isHidden = hideIndicator!
+            indicator.isHidden = hideIndicator
         }
     }
     
@@ -121,7 +138,8 @@ open class ZJTabPageView: UIView {
         
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.bounces = false
+        collectionView.bounces = true
+        collectionView.alwaysBounceHorizontal = true
         collectionView.backgroundColor = UIColor.yellow
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -170,6 +188,7 @@ open class ZJTabPageView: UIView {
     }
     
     fileprivate func moveIndicator(animated: Bool) {
+        
         let cell = collectionView.cellForItem(at: IndexPath.init(item: currentIndex, section: 0))
     
         var postionX:CGFloat = 0
@@ -204,7 +223,6 @@ extension ZJTabPageView:UICollectionViewDataSource {
         if currentIndex == indexPath.item {
             cell.label.textColor = titleSelectColor
             
-            let fontScale = titleSelectFont.pointSize/titleNomalFont.pointSize
             cell.label.transform = CGAffineTransform.init(scaleX: fontScale, y: fontScale)
             cell.label.font = titleSelectFont
         }else{
@@ -224,9 +242,8 @@ extension ZJTabPageView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         
         var titleWidth = getContentWidth(title: dataSource[indexPath.item])
-        if currentIndex == indexPath.item {
-            titleWidth *= fontScale
-        }
+        
+        titleWidth *= fontScale
         let itemW = itemWidth ?? titleWidth
         
         return CGSize.init(width: itemW, height: collectionView.bounds.height)
@@ -263,7 +280,10 @@ extension ZJTabPageView: UICollectionViewDelegate {
         collectionView.deselectItem(at: indexPath, animated: true)
         
         didSelectItemAtIndexPath(indexPath: indexPath)
-        
+        guard itemWidth == nil else {
+            return
+        }
+        moveIndicator(animated: true)
     }
     //选中方法
     fileprivate func didSelectItemAtIndexPath(indexPath: IndexPath){
@@ -311,12 +331,10 @@ extension ZJTabPageView: UICollectionViewDelegate {
                 indicator.bounds = CGRect.init(x: 0, y: 0, width: itemWidth!, height: indicator.bounds.height)
             }
             
-            moveIndicator(animated: true)
-            
         }
         
         if let delegate = self.delegate {
-            delegate.tabPageView!(self, didSelectIndex: indexPath.row)
+            delegate.tabPageView!(self, didSelectIndex: indexPath.item)
         }
     }
     

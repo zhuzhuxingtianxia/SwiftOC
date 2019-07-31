@@ -37,8 +37,8 @@ class SwiftController: UIViewController {
     
     lazy var tabpage:ZJTabPageView = {
         let page = ZJTabPageView.init(frame: CGRect.init(x: 0, y: 300, width: UIScreen.main.bounds.size.width, height: 40))
-        page.selectIndex = 1
-//        page.itemWidth = 80
+//        page.selectIndex = 1
+        page.itemWidth = 80
         page.titleSelectFont = UIFont.systemFont(ofSize: 16)
         page.delegate = self
        return page;
@@ -105,7 +105,8 @@ extension SwiftController {
 
 extension  SwiftController: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        let moveRatio = scrollView.contentOffset.x / (scrollView.contentSize.width - scrollView.frame.width)
+        tabpage.moveRatio =  moveRatio;
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
