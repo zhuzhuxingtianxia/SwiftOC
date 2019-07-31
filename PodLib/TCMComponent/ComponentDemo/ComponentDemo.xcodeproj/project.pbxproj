@@ -24,6 +24,7 @@
 		B674C52922D84F9800C5D9D4 /* PagerSubCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = B674C52822D84F9800C5D9D4 /* PagerSubCell1.m */; };
 		B674C52F22D8695C00C5D9D4 /* RunLabelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B674C52E22D8695C00C5D9D4 /* RunLabelController.m */; };
 		B674C53122D86BC600C5D9D4 /* RunLabelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B674C53022D86BC600C5D9D4 /* RunLabelController.xib */; };
+		B69F132922EEA63C003338C4 /* Brage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F132822EEA63C003338C4 /* Brage.swift */; };
 		D2C0D64AEA91CB870E266E76 /* libPods-ComponentDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 408B80DE21CF58D9C6F72410 /* libPods-ComponentDemo.a */; };
 		F934556E30EE0E36263E4DDC /* libPods-ComponentDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E223C03C90BE63A2F2740E /* libPods-ComponentDemoTests.a */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,8 @@
 		B674C52D22D8695C00C5D9D4 /* RunLabelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLabelController.h; sourceTree = "<group>"; };
 		B674C52E22D8695C00C5D9D4 /* RunLabelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLabelController.m; sourceTree = "<group>"; };
 		B674C53022D86BC600C5D9D4 /* RunLabelController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunLabelController.xib; sourceTree = "<group>"; };
+		B69F132722EEA63C003338C4 /* ComponentDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComponentDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		B69F132822EEA63C003338C4 /* Brage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brage.swift; sourceTree = "<group>"; };
 		B8F3C4B14024255DDB96440C /* libPods-ComponentDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComponentDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB68486DB46BB88F7AAE7F9B /* Pods-ComponentDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComponentDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComponentDemo/Pods-ComponentDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		CB4C90EA8E8E80E460928D77 /* Pods-ComponentDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComponentDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComponentDemo/Pods-ComponentDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				B636605522D60EE6006168BD /* LaunchScreen.storyboard */,
 				B636605822D60EE6006168BD /* Info.plist */,
 				B636605922D60EE6006168BD /* main.m */,
+				B69F132822EEA63C003338C4 /* Brage.swift */,
+				B69F132722EEA63C003338C4 /* ComponentDemo-Bridging-Header.h */,
 			);
 			path = ComponentDemo;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				TargetAttributes = {
 					B636604622D60EE5006168BD = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					B636605E22D60EE6006168BD = {
 						CreatedOnToolsVersion = 10.1;
@@ -419,6 +425,7 @@
 				B674C52222D83C6400C5D9D4 /* TabPageSubController.m in Sources */,
 				B636604C22D60EE5006168BD /* AppDelegate.m in Sources */,
 				B67439D122D7233600DC410E /* TabPageController1.m in Sources */,
+				B69F132922EEA63C003338C4 /* Brage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,8 +596,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB68486DB46BB88F7AAE7F9B /* Pods-ComponentDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N3379XTAJ9;
 				INFOPLIST_FILE = ComponentDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -600,6 +610,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jion.ComponentDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ComponentDemo/ComponentDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -608,8 +621,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB4C90EA8E8E80E460928D77 /* Pods-ComponentDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N3379XTAJ9;
 				INFOPLIST_FILE = ComponentDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -619,6 +635,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jion.ComponentDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ComponentDemo/ComponentDemo-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -627,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0AF98AF8652C5D8ADAF92E42 /* Pods-ComponentDemoTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ComponentDemoTests/Info.plist;
@@ -646,6 +665,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 45D2741D8FED21B99FF6C104 /* Pods-ComponentDemoTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ComponentDemoTests/Info.plist;
@@ -665,6 +685,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DE607132D32FCAC76E2C9C2E /* Pods-ComponentDemoUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ComponentDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -683,6 +704,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92906D05B62087878B55E49E /* Pods-ComponentDemoUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ComponentDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

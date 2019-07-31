@@ -144,6 +144,7 @@
 		B5DFD358D8E7E46EEC2D74ECFF329662 /* YYTextSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE7F4D6EEBFFDE900D496F7D22B86E6 /* YYTextSelectionView.m */; };
 		B674C53422D8751100C5D9D4 /* TCMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B674C53322D8751100C5D9D4 /* TCMButton.m */; };
 		B69417525CB85641D654737CF18B6713 /* YYAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF84498D7E3C0878CCEA19605D70599 /* YYAnimatedImageView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B69F132622EEA230003338C4 /* ZJTabPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F132522EEA22F003338C4 /* ZJTabPageView.swift */; };
 		B6C1E044E9D27DBF47FD2C8C7346E4EF /* NSNumber+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CCF3B399BC90236734AA9A36E7330 /* NSNumber+YYAdd.m */; };
 		B72194F6B0C4F6BF3F315A2BD71B4D2D /* YYTextDebugOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B5E4F22FDACD1B154E675E1702514FF /* YYTextDebugOption.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B7EF66BA3542D1CDE8F6A35EB882F365 /* YYTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8862F8193B81934C9D03C891CBD49896 /* YYTimer.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -410,6 +411,8 @@
 		B60AB4CCA1430AF0F480069E11E1483C /* TCMTabPagerItemView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TCMTabPagerItemView.h; sourceTree = "<group>"; };
 		B674C53222D8751100C5D9D4 /* TCMButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMButton.h; sourceTree = "<group>"; };
 		B674C53322D8751100C5D9D4 /* TCMButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMButton.m; sourceTree = "<group>"; };
+		B69F132422EEA22E003338C4 /* TCMComponent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TCMComponent-Bridging-Header.h"; sourceTree = "<group>"; };
+		B69F132522EEA22F003338C4 /* ZJTabPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTabPageView.swift; sourceTree = "<group>"; };
 		B6DE02A324AB12E8469D04F2C073F968 /* TCMPageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TCMPageView.h; sourceTree = "<group>"; };
 		B7ED48731325A76571698C920E6DC56D /* YYDiskCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYDiskCache.h; path = YYKit/Cache/YYDiskCache.h; sourceTree = "<group>"; };
 		B8B6A6A669929C264690AE45C6C678A0 /* YYThreadSafeDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYThreadSafeDictionary.h; path = YYKit/Utility/YYThreadSafeDictionary.h; sourceTree = "<group>"; };
@@ -886,6 +889,8 @@
 				12AE4B25100F9CBD47E2D643B29AF020 /* TCMTabPagerItemView.m */,
 				6EFFC19B0C7EE59313818468BF267A8E /* TCMTabPagerView.h */,
 				633FE30A13E31D6B9881AFE2A4633819 /* TCMTabPagerView.m */,
+				B69F132522EEA22F003338C4 /* ZJTabPageView.swift */,
+				B69F132422EEA22E003338C4 /* TCMComponent-Bridging-Header.h */,
 			);
 			name = Tabpage;
 			path = TCMComponent/Tabpage;
@@ -1118,6 +1123,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					B1BEB79F0AE9E32BB1EBDC8275EDD50A = {
+						LastSwiftMigration = 1010;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1260,6 +1270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				770FCF4B66CD315D6452EAB0D857D421 /* TCMBannerView.m in Sources */,
+				B69F132622EEA230003338C4 /* ZJTabPageView.swift in Sources */,
 				67102D62ABBB1A5C76A8782375E89666 /* TCMComponent-dummy.m in Sources */,
 				F23D2FD83C2CFED87550A587778DB3E4 /* TCMPageView.m in Sources */,
 				63000B027A23A45AACA36D6C461B5E68 /* TCMRunLabel.m in Sources */,
@@ -1482,12 +1493,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4F82F44F1DA4E32E2F5D71DEC139AD0 /* TCMComponent.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/TCMComponent/TCMComponent-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1497,6 +1511,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OBJC_BRIDGING_HEADER = "../../TCMComponent/Tabpage/TCMComponent-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1572,12 +1588,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4F82F44F1DA4E32E2F5D71DEC139AD0 /* TCMComponent.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/TCMComponent/TCMComponent-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1587,6 +1606,9 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OBJC_BRIDGING_HEADER = "../../TCMComponent/Tabpage/TCMComponent-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

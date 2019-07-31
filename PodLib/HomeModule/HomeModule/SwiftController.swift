@@ -7,6 +7,7 @@
 
 import UIKit
 import TCMBase
+import TCMComponent
 
 class SwiftController: UIViewController {
     var button:UIButton = {
@@ -34,6 +35,20 @@ class SwiftController: UIViewController {
         
     }()
     
+    lazy var tabpage:ZJTabPageView = {
+        let page = ZJTabPageView.init(frame: CGRect.init(x: 0, y: 300, width: UIScreen.main.bounds.size.width, height: 40))
+        page.selectIndex = 1
+        
+        page.itemWidth = 60
+        page.titleSelectFont = UIFont.systemFont(ofSize: 18)
+        page.delegate = self
+        page.dataSource = ["标题1","标题2","标题3","标题4","标题5","标题6","标题7"]
+        
+       return page;
+    }()
+    
+    var contentScrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -42,7 +57,34 @@ class SwiftController: UIViewController {
         view.addSubview(button)
         view.addSubview(label)
         view.addSubview(imgView)
+        view.addSubview(tabpage)
         
+        buildView()
+    }
+    
+    func buildView() {
+        let scrollView = UIScrollView.init()
+        scrollView.frame = CGRect.init(x: 0, y: tabpage.frame.maxY, width: tabpage.frame.width, height: 400)
+        scrollView.isPagingEnabled = true
+        scrollView.delegate = self
+        scrollView.contentSize = CGSize.init(width: scrollView.frame.width * CGFloat(tabpage.dataSource.count), height: scrollView.frame.height)
+        contentScrollView = scrollView
+        
+        view.addSubview(scrollView)
+        for (index,item) in tabpage.dataSource.enumerated() {
+            let subview = UIView.init(frame: CGRect.init(x: scrollView.frame.width * CGFloat(index), y: 0, width: scrollView.frame.width, height: scrollView.frame.height))
+            subview.backgroundColor = UIColor.randColor()
+            
+            let label = UILabel.init()
+            label.text = item
+            label.sizeToFit()
+            label.center = CGPoint.init(x: subview.bounds.width/2.0, y: subview.bounds.height/2.0)
+            subview.addSubview(label)
+            
+            scrollView.addSubview(subview)
+        }
+        
+        scrollView.contentOffset = CGPoint.init(x: CGFloat(tabpage.selectIndex) * scrollView.bounds.width, y: 0)
     }
     
     // MARK: - Action
@@ -61,5 +103,25 @@ extension SwiftController {
         let vc = SwiftController()
         vc.label.text = params!["pp"] as? String
         return vc
+    }
+}
+
+extension  SwiftController: UIScrollViewDelegate {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let offsetX = scrollView.contentOffset.x
+        let index = offsetX/scrollView.bounds.width
+        tabpage.selectIndex = NSInteger(index)
+    }
+}
+
+extension  SwiftController: ZJTabPageViewDelegate {
+    
+   public func tabPageView(_ pageView:ZJTabPageView, didSelectIndex index: NSInteger){
+    contentScrollView.setContentOffset(CGPoint.init(x: contentScrollView.bounds.width * CGFloat(index), y: 0), animated: true)
+    
     }
 }

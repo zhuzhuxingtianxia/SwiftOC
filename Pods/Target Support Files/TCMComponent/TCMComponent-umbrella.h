@@ -12,6 +12,7 @@
 
 #import "TCMBannerView.h"
 #import "TCMPageView.h"
+#import "TCMComponent-Bridging-Header.h"
 #import "TCMTabPagerItemModel.h"
 #import "TCMTabPagerItemView.h"
 #import "TCMTabPagerView.h"
