@@ -177,7 +177,7 @@ extension FlowPageView {
         collectionView.register(FlowPageViewCell.self, forCellWithReuseIdentifier: "FlowPageViewCell")
         collectionView.backgroundColor = UIColor.white
         collectionView.isPagingEnabled = true
-//        collectionView.isScrollEnabled = false
+        collectionView.isScrollEnabled = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.dataSource = self
