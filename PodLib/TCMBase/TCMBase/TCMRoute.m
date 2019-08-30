@@ -11,15 +11,23 @@
 @interface TCMRoute ()
 
 @end
+static NSMutableDictionary *routeControllersMap = nil;
+
 @implementation TCMRoute
 
-static TCMRoute *route = nil;
-+ (instancetype)route {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        route = [self new];
-    });
-    return route;
++ (void)registerController:(NSString *)target withKey:(NSString*)key {
+    if (!target || target.length == 0) {
+        NSLog(@"target not nil or emty");
+        return;
+    }
+    if (!key || key.length == 0) {
+        NSLog(@"key not nil or emty");
+        return;
+    }
+    if (!routeControllersMap) {
+        routeControllersMap = [[NSMutableDictionary alloc] init];
+    }
+    [routeControllersMap setValue:target forKey:key];
 }
 
 + (UIViewController*)routeWithTarget:(nonnull NSString *)target  params:(NSDictionary<NSString *, id>  *)params{
@@ -28,6 +36,13 @@ static TCMRoute *route = nil;
 }
 
 + (UIViewController*)routeWithTarget:(nonnull NSString *)target routeStyle:(TCMRouteStyle)routeStyle params:(NSDictionary<NSString *, id>  *)params{
+    
+    if (routeControllersMap) {
+        NSString *value = [routeControllersMap valueForKey:target];
+        if (value) {
+            target = value;
+        }
+    }
     
     if ((!target || target.length == 0)&&routeStyle != TCMRoutePop) {
         NSLog(@"target not nil or emty");
@@ -38,7 +53,7 @@ static TCMRoute *route = nil;
         return [self routeTypePopWithTarget:target params:params];
     }else if (routeStyle == TCMRouteTab){
         
-        return [self routeTypeTabWithTarget:target];
+        return [self routeTypeTabWithTarget:target params:params];
     }
     
     Class<TCMRouteProtocol> protocolClass = NSClassFromString(target);
@@ -176,7 +191,7 @@ static TCMRoute *route = nil;
     return backVC;
 }
 
-+ (UIViewController*)routeTypeTabWithTarget:(nonnull NSString *)target {
++ (UIViewController*)routeTypeTabWithTarget:(nonnull NSString *)target params:(NSDictionary<NSString *, id>  *)params{
     UITabBarController *tabbar = [self getTabbarController];
     if (tabbar) {
         __block NSInteger index = -1;
@@ -203,7 +218,9 @@ static TCMRoute *route = nil;
         if (index>=0) {
             tabbar.selectedIndex = index;
         }
-        
+        if (vc && [vc respondsToSelector:@selector(routePopWithParams:)]) {
+            [vc routePopWithParams:params];
+        }
         return vc;
     }
     
@@ -242,10 +259,16 @@ static TCMRoute *route = nil;
         return tabVC;
     }else if ([rootVC isKindOfClass:[UINavigationController class]]){
         UINavigationController * nav = (UINavigationController *)rootVC;
-        UIViewController *vc = nav.viewControllers.firstObject;
-        if ([vc isKindOfClass:[UITabBarController class]]) {
-            return (UITabBarController*)vc;
-        }
+        NSArray<UIViewController*> *controllers = nav.viewControllers;
+        __block UITabBarController *tabVC  = nil;
+        [controllers enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(UIViewController*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:[UITabBarController class]]) {
+                tabVC = (UITabBarController*)obj;
+                *stop = YES;
+                return;
+            }
+        }];
+        return tabVC;
     }
     
     return nil;

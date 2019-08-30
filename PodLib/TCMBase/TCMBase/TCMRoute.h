@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, TCMRouteStyle) {
  */
 + (nonnull UIViewController<TCMRouteProtocol> *)routeWithParams:(nullable NSDictionary<NSString *, id> *)params;
 /*
- 用于TCMRoutePop时，传递参数。
+ 用于TCMRoutePop或TCMRouteTab时，传递参数。
  */
 - (void)routePopWithParams:(nullable NSDictionary<NSString *, id> *)params;
 
@@ -35,8 +35,21 @@ typedef NS_ENUM(NSUInteger, TCMRouteStyle) {
 @interface TCMRoute : NSObject
 
 + (UIViewController*)routeWithTarget:(nonnull NSString *)target  params:(nullable NSDictionary<NSString *, id>  *)params;
-
+/*
+ TCMRouteTab无需实现TCMRouteProtocol协议；
+ TCMRoutePop或TCMRouteTab模式如果需要传递参数可实现routePopWithParams协议方法
+ */
 + (UIViewController*)routeWithTarget:(nonnull NSString *)target routeStyle:(TCMRouteStyle)routeStyle params:(nullable NSDictionary<NSString *, id>  *)params;
+
+/*
+ 注册路由控制器,不注册则使用默认的target作为控制器
+ 可用于weex跳转native时标示目标控制器
+ 例如：
+ 注册：[TCMRoute registerController:@“TCMHoneController” withKey:@"home"];
+ 使用：[TCMRoute routeWithTarget:@"home" routeStyle:TCMRouteTab params:nil];
+ 
+ */
++ (void)registerController:(NSString *)target withKey:(NSString*)key;
 
 @end
 
