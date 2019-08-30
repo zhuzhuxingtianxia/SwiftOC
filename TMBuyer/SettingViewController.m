@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
     
 }
 - (IBAction)centerAction:(id)sender {
@@ -29,7 +30,7 @@
     
     XXViewController *xx = [XXViewController new];
     xx.title = @"从OC来到swift";
-    
+    [self.navigationController pushViewController:xx animated:YES];
 }
 
 

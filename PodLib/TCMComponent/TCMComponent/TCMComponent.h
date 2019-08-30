@@ -20,7 +20,7 @@ FOUNDATION_EXPORT const unsigned char TCMComponentVersionString[];
 #import <TCMComponent/TCMTabPagerView.h>
 #import <TCMComponent/TCMTabPagerItemModel.h>
 #import <TCMComponent/TCMRunLabel.h>
-#import <TCMComponent/TCMButton.h>
+//#import <TCMComponent/TCMButton.h>
 
 #else
 
@@ -29,6 +29,6 @@ FOUNDATION_EXPORT const unsigned char TCMComponentVersionString[];
 #import "TCMTabPagerView.h"
 #import "TCMTabPagerItemModel.h"
 #import "TCMRunLabel.h"
-#import "TCMButton.h"
+//#import "TCMButton.h"
 
 #endif
